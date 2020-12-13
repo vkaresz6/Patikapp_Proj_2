@@ -44,13 +44,15 @@
             this.pharmaciesTableAdapter = new Patikapp_proj_2.vpharmacies_databaseDataSetTableAdapters.pharmaciesTableAdapter();
             this.application_base_controll_variablesTableAdapter1 = new Patikapp_proj_2.vpharmacies_databaseDataSetTableAdapters.application_base_controll_variablesTableAdapter();
             this.ManageButton = new System.Windows.Forms.Button();
-            this.createpharmacyButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pharmaciesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vpharmacies_databaseDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // labelName
             // 
+            this.labelName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelName.ForeColor = System.Drawing.Color.SeaShell;
@@ -62,6 +64,7 @@
             // 
             // NameCombobox
             // 
+            this.NameCombobox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.NameCombobox.DataSource = this.pharmaciesBindingSource;
             this.NameCombobox.DisplayMember = "name";
             this.NameCombobox.FormattingEnabled = true;
@@ -84,6 +87,7 @@
             // 
             // AdressTextBox
             // 
+            this.AdressTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.AdressTextBox.Location = new System.Drawing.Point(12, 107);
             this.AdressTextBox.Name = "AdressTextBox";
             this.AdressTextBox.Size = new System.Drawing.Size(776, 20);
@@ -91,6 +95,9 @@
             // 
             // labelAdress
             // 
+            this.labelAdress.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAdress.AutoSize = true;
             this.labelAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelAdress.ForeColor = System.Drawing.Color.SeaShell;
@@ -102,6 +109,9 @@
             // 
             // FacebookLabel
             // 
+            this.FacebookLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.FacebookLabel.AutoSize = true;
             this.FacebookLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FacebookLabel.ForeColor = System.Drawing.Color.SeaShell;
@@ -113,6 +123,7 @@
             // 
             // FacebookTextBox
             // 
+            this.FacebookTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.FacebookTextBox.Location = new System.Drawing.Point(12, 232);
             this.FacebookTextBox.Name = "FacebookTextBox";
             this.FacebookTextBox.Size = new System.Drawing.Size(776, 20);
@@ -120,6 +131,9 @@
             // 
             // PhoneLabel
             // 
+            this.PhoneLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PhoneLabel.AutoSize = true;
             this.PhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.PhoneLabel.ForeColor = System.Drawing.Color.SeaShell;
@@ -131,6 +145,9 @@
             // 
             // WebLabel
             // 
+            this.WebLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.WebLabel.AutoSize = true;
             this.WebLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.WebLabel.ForeColor = System.Drawing.Color.SeaShell;
@@ -142,6 +159,7 @@
             // 
             // PhoneTextBox
             // 
+            this.PhoneTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.PhoneTextBox.Location = new System.Drawing.Point(12, 175);
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(776, 20);
@@ -149,6 +167,7 @@
             // 
             // WebTextBox
             // 
+            this.WebTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.WebTextBox.Location = new System.Drawing.Point(12, 295);
             this.WebTextBox.Name = "WebTextBox";
             this.WebTextBox.Size = new System.Drawing.Size(776, 20);
@@ -164,22 +183,13 @@
             // 
             // ManageButton
             // 
-            this.ManageButton.Location = new System.Drawing.Point(12, 334);
+            this.ManageButton.Location = new System.Drawing.Point(253, 335);
             this.ManageButton.Name = "ManageButton";
-            this.ManageButton.Size = new System.Drawing.Size(128, 35);
+            this.ManageButton.Size = new System.Drawing.Size(267, 35);
             this.ManageButton.TabIndex = 11;
-            this.ManageButton.Text = "Patika Kezelése";
+            this.ManageButton.Text = "Kezelés";
             this.ManageButton.UseVisualStyleBackColor = true;
-            // 
-            // createpharmacyButton
-            // 
-            this.createpharmacyButton.Location = new System.Drawing.Point(660, 334);
-            this.createpharmacyButton.Name = "createpharmacyButton";
-            this.createpharmacyButton.Size = new System.Drawing.Size(128, 35);
-            this.createpharmacyButton.TabIndex = 12;
-            this.createpharmacyButton.Text = "Új Patika felvétele";
-            this.createpharmacyButton.UseVisualStyleBackColor = true;
-            this.createpharmacyButton.Click += new System.EventHandler(this.createpharmacyButton_Click);
+            this.ManageButton.Click += new System.EventHandler(this.ManageButton_Click_1);
             // 
             // PharmaciesManager
             // 
@@ -187,7 +197,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(796, 382);
-            this.Controls.Add(this.createpharmacyButton);
             this.Controls.Add(this.ManageButton);
             this.Controls.Add(this.WebTextBox);
             this.Controls.Add(this.PhoneTextBox);
@@ -226,6 +235,5 @@
         private vpharmacies_databaseDataSetTableAdapters.pharmaciesTableAdapter pharmaciesTableAdapter;
         private vpharmacies_databaseDataSetTableAdapters.application_base_controll_variablesTableAdapter application_base_controll_variablesTableAdapter1;
         private System.Windows.Forms.Button ManageButton;
-        private System.Windows.Forms.Button createpharmacyButton;
     }
 }

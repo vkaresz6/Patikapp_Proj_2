@@ -1,4 +1,5 @@
-﻿using Patikapp_proj_2.Presenters;
+﻿using Patikapp_proj_2.Modells;
+using Patikapp_proj_2.Presenters;
 using Patikapp_proj_2.Repositories;
 using Patikapp_proj_2.Resorurces.CustomControlls;
 using System;
@@ -51,5 +52,25 @@ namespace Patikapp_proj_2.Views
         {
 
         }
+
+        private void ManageButton_Click_1(object sender, EventArgs e)
+        {
+            Form v = new PharmacyManager_action_picker();
+            v.MdiParent = this.ParentForm;
+            v.Show();
+        }
+
+        public int getSelected()
+        {
+            int vMember = (int)NameCombobox.SelectedValue;
+            return vMember ;
+        
+        }
+
+        //public String getName()
+        //{
+        //    String dMember = NameCombobox.DisplayMember;
+        //    return dMember;
+        //}
     }
 }
