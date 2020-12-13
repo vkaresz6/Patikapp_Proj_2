@@ -14,6 +14,8 @@ namespace Patikapp_proj_2.Views
     {
         private int childFormNumber = 0;
 
+        public int pharmacy_Id;
+        public String pharmacyName;
         public MainWindow()
         {
             InitializeComponent();

@@ -67,10 +67,10 @@ namespace Patikapp_proj_2.Views
         
         }
 
-        //public String getName()
-        //{
-        //    String dMember = NameCombobox.DisplayMember;
-        //    return dMember;
-        //}
+        public String getName()
+        {
+            String dMember = NameCombobox.DisplayMember;
+            return dMember;
+        }
     }
 }
