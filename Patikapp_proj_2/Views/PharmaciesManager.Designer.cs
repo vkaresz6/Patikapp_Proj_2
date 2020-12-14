@@ -164,6 +164,7 @@
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(776, 20);
             this.PhoneTextBox.TabIndex = 9;
+            this.PhoneTextBox.TextChanged += new System.EventHandler(this.PhoneTextBox_TextChanged);
             // 
             // WebTextBox
             // 

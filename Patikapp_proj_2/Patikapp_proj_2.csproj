@@ -170,9 +170,12 @@
       <DependentUpon>Vpharmacies_database.edmx</DependentUpon>
     </Compile>
     <Compile Include="Presenters\PharmacieManagerPresenter.cs" />
+    <Compile Include="Presenters\pharmacymanager_actionpicker_presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interfaces\Ipharmacymanager_actionpicker_repo.cs" />
     <Compile Include="Repositories\PharmaciesManagerViewRepo.cs" />
+    <Compile Include="Repositories\pharmacymanager_actionpicker_repo.cs" />
     <Compile Include="Resorurces\CustomControlls\RButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -180,6 +183,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Interfaces\IPharmaciesManager.cs" />
+    <Compile Include="Interfaces\IPharmacyManager_action_picker.cs" />
     <Compile Include="Views\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>

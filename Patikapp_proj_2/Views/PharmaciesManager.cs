@@ -17,10 +17,12 @@ namespace Patikapp_proj_2.Views
     public partial class PharmaciesManager : Form, IPharmaciesManager
     {
         PharmacieManagerPresenter presenter;
+
         public PharmaciesManager()
         {
             InitializeComponent();
             presenter = new PharmacieManagerPresenter(this, new PharmaciesManagerViewRepo());
+
         }
 
         public ComboBox NameCombobox1 { get => NameCombobox; set => NameCombobox = value; }
@@ -34,6 +36,7 @@ namespace Patikapp_proj_2.Views
             // TODO: This line of code loads data into the 'vpharmacies_databaseDataSet.pharmacies' table. You can move, or remove it, as needed.
             this.pharmaciesTableAdapter.Fill(this.vpharmacies_databaseDataSet.pharmacies);
             presenter.fillView();
+
         }
 
         private void NameCombobox_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,7 +58,7 @@ namespace Patikapp_proj_2.Views
 
         private void ManageButton_Click_1(object sender, EventArgs e)
         {
-            Form v = new PharmacyManager_action_picker();
+            Form v = new PharmacyManager_action_picker((int)NameCombobox.SelectedValue, NameCombobox.Text);
             v.MdiParent = this.ParentForm;
             v.Show();
         }
@@ -69,8 +72,13 @@ namespace Patikapp_proj_2.Views
 
         public String getName()
         {
-            String dMember = NameCombobox.DisplayMember;
+            String dMember =NameCombobox.Text;
             return dMember;
+        }
+
+        private void PhoneTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

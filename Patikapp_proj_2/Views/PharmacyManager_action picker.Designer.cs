@@ -1,4 +1,6 @@
-﻿namespace Patikapp_proj_2.Views
+﻿using System.Windows.Forms;
+
+namespace Patikapp_proj_2.Views
 {
     partial class PharmacyManager_action_picker
     {
@@ -44,6 +46,7 @@
             this.PharmacyManager_DeleteAction.TabIndex = 0;
             this.PharmacyManager_DeleteAction.Text = "Törlés";
             this.PharmacyManager_DeleteAction.UseVisualStyleBackColor = true;
+            this.PharmacyManager_DeleteAction.Click += new System.EventHandler(this.PharmacyManager_DeleteAction_Click);
             // 
             // pharmacyManager_ModifyAction
             // 
