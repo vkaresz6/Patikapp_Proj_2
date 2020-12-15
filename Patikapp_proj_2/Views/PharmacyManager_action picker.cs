@@ -53,5 +53,12 @@ namespace Patikapp_proj_2.Views
             presenter.delete_action(pharmacy_id);
             this.Close();
         }
+
+        private void pharmacyManager_createNewAction_Click(object sender, EventArgs e)
+        {
+            CreateNewPharmacyActionForm v = new CreateNewPharmacyActionForm();
+            v.MdiParent = this.MdiParent;
+            v.Show();
+        }
     }
 }

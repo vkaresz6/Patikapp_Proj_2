@@ -65,6 +65,7 @@ namespace Patikapp_proj_2.Views
             this.pharmacyManager_createNewAction.TabIndex = 2;
             this.pharmacyManager_createNewAction.Text = "Új patika felvétele";
             this.pharmacyManager_createNewAction.UseVisualStyleBackColor = true;
+            this.pharmacyManager_createNewAction.Click += new System.EventHandler(this.pharmacyManager_createNewAction_Click);
             // 
             // pharmacyManager_AssociateEmployeeAction
             // 
