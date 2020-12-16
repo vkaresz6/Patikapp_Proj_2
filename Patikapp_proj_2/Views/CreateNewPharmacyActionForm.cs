@@ -37,12 +37,8 @@ namespace Patikapp_proj_2.Views
         public TextBox WebTextBox1 { get => WebTextBox; set => WebTextBox = value; }
         public TextBox PhoneTextBox1 { get => PhoneTextBox; set => PhoneTextBox = value; }
         public TextBox FacebookTextBox1 { get => FacebookTextBox; set => FacebookTextBox = value; }
-        public TextBox AdressTextBox1 { get => AdressTextBox; set => AdressTextBox = value; }
-        public Button Associate_button { get => associate_button; set => associate_button = value; }
-        public DataGridViewTextBoxColumn IdDataGridViewTextBoxColumn { get => idDataGridViewTextBoxColumn; set => idDataGridViewTextBoxColumn = value; }
-        public DataGridViewTextBoxColumn UsernameDataGridViewTextBoxColumn { get => usernameDataGridViewTextBoxColumn; set => usernameDataGridViewTextBoxColumn = value; }
+        public TextBox AdressTextBox1 { get => AdressTextBox; set => AdressTextBox = value; }       
         public BindingSource UsersBindingSource1 { get => usersBindingSource1; set => usersBindingSource1 = value; }
-        public Button DissociateButton { get => dissociateButton; set => dissociateButton = value; }
         public Button CreatePharmacyButton1 { get => CreatePharmacyButton; set => CreatePharmacyButton = value; }
         public TextBox NameTextBox1 { get => NameTextBox; set => NameTextBox = value; }
 
@@ -56,7 +52,7 @@ namespace Patikapp_proj_2.Views
             param2.phone = PhoneTextBox.Text;
             param2.facebook = FacebookTextBox.Text;
             param2.adress = AdressTextBox.Text;
-            param2.pharmacy_id = presenter.getNextIndex();
+            param2.pharmacy_id = presenter.getLasttIndex();
             presenter.insertAction(param1, param2);
         }
     }

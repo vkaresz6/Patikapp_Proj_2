@@ -25,9 +25,9 @@ namespace Patikapp_proj_2.Presenters
             _r.insert(param1, param2);
         }
 
-        public int getNextIndex()
+        public int getLasttIndex()
         {
-            return _r.getNextIndex();
+            return _r.getLastIndex();
         }
     }
 }
