@@ -172,6 +172,7 @@
     <Compile Include="Presenters\CreatePharmacyActionPresenter.cs" />
     <Compile Include="Presenters\PharmacieManagerPresenter.cs" />
     <Compile Include="Presenters\pharmacymanager_actionpicker_presenter.cs" />
+    <Compile Include="Presenters\UpdatePharmaciePresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\RepoInterfaces\Ipharmacymanager_actionpicker_repo.cs" />
@@ -179,6 +180,7 @@
     <Compile Include="Interfaces\RepoInterfaces\ICreateNewPharmacyActionRepo.cs" />
     <Compile Include="Repositories\PharmaciesManagerViewRepo.cs" />
     <Compile Include="Repositories\pharmacymanager_actionpicker_repo.cs" />
+    <Compile Include="Repositories\UpdatePharmacyRepo.cs" />
     <Compile Include="Resorurces\CustomControlls\RButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -194,6 +196,7 @@
       <DependentUpon>CreateNewPharmacyActionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\ViewInterfaces\ICreateNewPharmacyActionForm.cs" />
+    <Compile Include="Interfaces\ViewInterfaces\IUpdatePharmacy.cs" />
     <Compile Include="Views\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +220,12 @@
     </Compile>
     <Compile Include="Views\PharmacyManager_action picker.Designer.cs">
       <DependentUpon>PharmacyManager_action picker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdatePharmacy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UpdatePharmacy.Designer.cs">
+      <DependentUpon>UpdatePharmacy.cs</DependentUpon>
     </Compile>
     <Compile Include="vpharmacies_databaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -246,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PharmacyManager_action picker.resx">
       <DependentUpon>PharmacyManager_action picker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UpdatePharmacy.resx">
+      <DependentUpon>UpdatePharmacy.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Modells\Vpharmacies_database.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

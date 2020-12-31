@@ -54,6 +54,8 @@ namespace Patikapp_proj_2.Views
             param2.adress = AdressTextBox.Text;
             param2.pharmacy_id = presenter.getLasttIndex();
             presenter.insertAction(param1, param2);
+            this.Hide();
+            this.Close();
         }
     }
 }
