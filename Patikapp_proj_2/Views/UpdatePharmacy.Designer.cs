@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.CreatePharmacyButton = new System.Windows.Forms.Button();
+            this.updateButton = new System.Windows.Forms.Button();
             this.WebTextBox = new System.Windows.Forms.TextBox();
             this.PhoneTextBox = new System.Windows.Forms.TextBox();
             this.WebLabel = new System.Windows.Forms.Label();
@@ -50,14 +50,15 @@
             this.NameTextBox.Size = new System.Drawing.Size(740, 20);
             this.NameTextBox.TabIndex = 40;
             // 
-            // CreatePharmacyButton
+            // updateButton
             // 
-            this.CreatePharmacyButton.Location = new System.Drawing.Point(294, 333);
-            this.CreatePharmacyButton.Name = "CreatePharmacyButton";
-            this.CreatePharmacyButton.Size = new System.Drawing.Size(194, 23);
-            this.CreatePharmacyButton.TabIndex = 39;
-            this.CreatePharmacyButton.Text = "Létrehoz";
-            this.CreatePharmacyButton.UseVisualStyleBackColor = true;
+            this.updateButton.Location = new System.Drawing.Point(294, 333);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(194, 23);
+            this.updateButton.TabIndex = 39;
+            this.updateButton.Text = "Módosítások mentése";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // WebTextBox
             // 
@@ -167,7 +168,7 @@
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.NameTextBox);
-            this.Controls.Add(this.CreatePharmacyButton);
+            this.Controls.Add(this.updateButton);
             this.Controls.Add(this.WebTextBox);
             this.Controls.Add(this.PhoneTextBox);
             this.Controls.Add(this.WebLabel);
@@ -180,6 +181,7 @@
             this.Name = "UpdatePharmacy";
             this.RightToLeftLayout = true;
             this.Text = "UpdatePharmacy";
+            this.Load += new System.EventHandler(this.UpdatePharmacy_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,7 +190,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox NameTextBox;
-        private System.Windows.Forms.Button CreatePharmacyButton;
+        private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.TextBox WebTextBox;
         private System.Windows.Forms.TextBox PhoneTextBox;
         private System.Windows.Forms.Label WebLabel;

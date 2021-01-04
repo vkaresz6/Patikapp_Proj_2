@@ -68,5 +68,12 @@ namespace Patikapp_proj_2.Views
         {
 
         }
+
+        private void patikánakToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form childForm = new TartozasPatikanak_Patikavalaszto();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
     }
 }

@@ -16,14 +16,14 @@ namespace Patikapp_proj_2.Views
     {
         IPharmaciesManager parentView;
         MainWindow parentForm;
-        int pharmacy_id;
-        String pharmacy_name;
+        int selected_pharmacy_id;
+        String selected_pharmacy_name;
         pharmacymanager_actionpicker_presenter presenter;
         public PharmacyManager_action_picker(int id, String name)
         {
             InitializeComponent();
-            pharmacy_id = id;
-            pharmacy_name = name;
+            selected_pharmacy_id = id;
+            selected_pharmacy_name = name;
             presenter = new pharmacymanager_actionpicker_presenter(this, new pharmacymanager_actionpicker_repo());
         }
 
@@ -39,7 +39,7 @@ namespace Patikapp_proj_2.Views
 
         private void PharmacyManager_action_picker_Load(object sender, EventArgs e)
         {
-            Selected1.Text = pharmacy_name;
+            Selected1.Text = selected_pharmacy_name;
         }
         public Button PharmacyManager_DeleteAction1 { get => PharmacyManager_DeleteAction; set => PharmacyManager_DeleteAction = value; }
         public Button PharmacyManager_ModifyAction { get => pharmacyManager_ModifyAction; set => pharmacyManager_ModifyAction = value; }
@@ -50,13 +50,27 @@ namespace Patikapp_proj_2.Views
 
         private void PharmacyManager_DeleteAction_Click(object sender, EventArgs e)
         {
-            presenter.delete_action(pharmacy_id);
+            presenter.delete_action(selected_pharmacy_id);
             this.Close();
         }
 
         private void pharmacyManager_createNewAction_Click(object sender, EventArgs e)
         {
             CreateNewPharmacyActionForm v = new CreateNewPharmacyActionForm();
+            v.MdiParent = this.MdiParent;
+            v.Show();
+        }
+
+        private void pharmacyManager_ModifyAction_Click(object sender, EventArgs e)
+        {
+            UpdatePharmacy v = new UpdatePharmacy(selected_pharmacy_id);
+            v.MdiParent = this.MdiParent;
+            v.Show();
+        }
+
+        private void pharmacyManager_AssociateEmployeeAction_Click(object sender, EventArgs e)
+        {
+            AssociateEmployeeForm v = new AssociateEmployeeForm(selected_pharmacy_id);
             v.MdiParent = this.MdiParent;
             v.Show();
         }

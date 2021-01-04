@@ -56,6 +56,7 @@ namespace Patikapp_proj_2.Views
             this.pharmacyManager_ModifyAction.TabIndex = 1;
             this.pharmacyManager_ModifyAction.Text = "Módosítás";
             this.pharmacyManager_ModifyAction.UseVisualStyleBackColor = true;
+            this.pharmacyManager_ModifyAction.Click += new System.EventHandler(this.pharmacyManager_ModifyAction_Click);
             // 
             // pharmacyManager_createNewAction
             // 
@@ -75,6 +76,7 @@ namespace Patikapp_proj_2.Views
             this.pharmacyManager_AssociateEmployeeAction.TabIndex = 3;
             this.pharmacyManager_AssociateEmployeeAction.Text = "Dolgozó hozzárendelése";
             this.pharmacyManager_AssociateEmployeeAction.UseVisualStyleBackColor = true;
+            this.pharmacyManager_AssociateEmployeeAction.Click += new System.EventHandler(this.pharmacyManager_AssociateEmployeeAction_Click);
             // 
             // label1
             // 
