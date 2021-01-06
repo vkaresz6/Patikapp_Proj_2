@@ -17,7 +17,6 @@ namespace Patikapp_proj_2.Modells
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public users()
         {
-            this.debtphtoph = new HashSet<debtphtoph>();
             this.message_to_patient = new HashSet<message_to_patient>();
             this.psw = new HashSet<psw>();
             this.user_roles = new HashSet<user_roles>();
@@ -27,8 +26,6 @@ namespace Patikapp_proj_2.Modells
         public int id { get; set; }
         public string username { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<debtphtoph> debtphtoph { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<message_to_patient> message_to_patient { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

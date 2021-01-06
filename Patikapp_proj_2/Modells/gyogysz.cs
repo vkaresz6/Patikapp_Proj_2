@@ -14,12 +14,6 @@ namespace Patikapp_proj_2.Modells
     
     public partial class gyogysz
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public gyogysz()
-        {
-            this.debtphtoph = new HashSet<debtphtoph>();
-        }
-    
         public int OEP_TTT { get; set; }
         public string OEP_NEV { get; set; }
         public string OEP_KSZ { get; set; }
@@ -27,8 +21,5 @@ namespace Patikapp_proj_2.Modells
         public string KISZ_MENNY { get; set; }
         public string KISZ_EGYS { get; set; }
         public string BRANDNEV { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<debtphtoph> debtphtoph { get; set; }
     }
 }

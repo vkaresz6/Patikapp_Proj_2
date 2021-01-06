@@ -17,8 +17,6 @@ namespace Patikapp_proj_2.Modells
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public pharmacies()
         {
-            this.debtphtoph = new HashSet<debtphtoph>();
-            this.debtphtoph1 = new HashSet<debtphtoph>();
             this.messagestoph = new HashSet<messagestoph>();
             this.pharmacies_data = new HashSet<pharmacies_data>();
             this.todo = new HashSet<todo>();
@@ -27,10 +25,6 @@ namespace Patikapp_proj_2.Modells
         public int id { get; set; }
         public string name { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<debtphtoph> debtphtoph { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<debtphtoph> debtphtoph1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<messagestoph> messagestoph { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

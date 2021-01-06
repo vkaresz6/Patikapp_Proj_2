@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="vpharmacies_databaseModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="vpharmacies_databaseModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="application_base_controll_variables">
           <Key>
             <PropertyRef Name="id" />
@@ -151,54 +151,6 @@
           <Property Name="Comment" Type="varchar" MaxLength="180" Nullable="false" />
           <Property Name="IsEmployedAt" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="debtphtoph_ibfk_1">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="debtphtoph" Type="Self.debtphtoph" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="debtphtoph">
-              <PropertyRef Name="actor_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="debtphtoph_ibfk_2">
-          <End Role="pharmacies" Type="Self.pharmacies" Multiplicity="1" />
-          <End Role="debtphtoph" Type="Self.debtphtoph" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="pharmacies">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="debtphtoph">
-              <PropertyRef Name="from_ph_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="debtphtoph_ibfk_3">
-          <End Role="gyogysz" Type="Self.gyogysz" Multiplicity="1" />
-          <End Role="debtphtoph" Type="Self.debtphtoph" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="gyogysz">
-              <PropertyRef Name="OEP_TTT" />
-            </Principal>
-            <Dependent Role="debtphtoph">
-              <PropertyRef Name="OEP_TTT" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="debtphtoph_ibfk_4">
-          <End Role="pharmacies" Type="Self.pharmacies" Multiplicity="1" />
-          <End Role="debtphtoph" Type="Self.debtphtoph" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="pharmacies">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="debtphtoph">
-              <PropertyRef Name="to_ph_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="message_to_patient_ibfk_1">
           <End Role="users" Type="Self.users" Multiplicity="1" />
           <End Role="message_to_patient" Type="Self.message_to_patient" Multiplicity="*" />
@@ -299,22 +251,6 @@
           <EntitySet Name="user_roles" EntityType="Self.user_roles" Schema="vpharmacies_database" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="vpharmacies_database" store:Type="Tables" />
           <EntitySet Name="users_data" EntityType="Self.users_data" Schema="vpharmacies_database" store:Type="Tables" />
-          <AssociationSet Name="debtphtoph_ibfk_1" Association="Self.debtphtoph_ibfk_1">
-            <End Role="users" EntitySet="users" />
-            <End Role="debtphtoph" EntitySet="debtphtoph" />
-          </AssociationSet>
-          <AssociationSet Name="debtphtoph_ibfk_2" Association="Self.debtphtoph_ibfk_2">
-            <End Role="pharmacies" EntitySet="pharmacies" />
-            <End Role="debtphtoph" EntitySet="debtphtoph" />
-          </AssociationSet>
-          <AssociationSet Name="debtphtoph_ibfk_3" Association="Self.debtphtoph_ibfk_3">
-            <End Role="gyogysz" EntitySet="gyogysz" />
-            <End Role="debtphtoph" EntitySet="debtphtoph" />
-          </AssociationSet>
-          <AssociationSet Name="debtphtoph_ibfk_4" Association="Self.debtphtoph_ibfk_4">
-            <End Role="pharmacies" EntitySet="pharmacies" />
-            <End Role="debtphtoph" EntitySet="debtphtoph" />
-          </AssociationSet>
           <AssociationSet Name="message_to_patient_ibfk_1" Association="Self.message_to_patient_ibfk_1">
             <End Role="users" EntitySet="users" />
             <End Role="message_to_patient" EntitySet="message_to_patient" />
@@ -344,8 +280,7 @@
             <End Role="users_data" EntitySet="users_data" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="vpharmacies_databaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -382,10 +317,6 @@
           <Property Name="amount" Type="Int32" Nullable="false" />
           <Property Name="exists" Type="Boolean" Nullable="false" />
           <Property Name="ExpirationDay" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="users" Relationship="Self.debtphtoph_ibfk_1" FromRole="debtphtoph" ToRole="users" />
-          <NavigationProperty Name="pharmacies" Relationship="Self.debtphtoph_ibfk_2" FromRole="debtphtoph" ToRole="pharmacies" />
-          <NavigationProperty Name="gyogysz" Relationship="Self.debtphtoph_ibfk_3" FromRole="debtphtoph" ToRole="gyogysz" />
-          <NavigationProperty Name="pharmacies1" Relationship="Self.debtphtoph_ibfk_4" FromRole="debtphtoph" ToRole="pharmacies" />
         </EntityType>
         <EntityType Name="gyogysz">
           <Key>
@@ -398,7 +329,6 @@
           <Property Name="KISZ_MENNY" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
           <Property Name="KISZ_EGYS" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Name="BRANDNEV" Type="String" MaxLength="54" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="debtphtoph" Relationship="Self.debtphtoph_ibfk_3" FromRole="gyogysz" ToRole="debtphtoph" />
         </EntityType>
         <EntityType Name="message_to_patient">
           <Key>
@@ -425,8 +355,6 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="debtphtoph" Relationship="Self.debtphtoph_ibfk_2" FromRole="pharmacies" ToRole="debtphtoph" />
-          <NavigationProperty Name="debtphtoph1" Relationship="Self.debtphtoph_ibfk_4" FromRole="pharmacies" ToRole="debtphtoph" />
           <NavigationProperty Name="messagestoph" Relationship="Self.messagestoph_ibfk_1" FromRole="pharmacies" ToRole="messagestoph" />
           <NavigationProperty Name="pharmacies_data" Relationship="Self.pharmacies_data_ibfk_1" FromRole="pharmacies" ToRole="pharmacies_data" />
           <NavigationProperty Name="todo" Relationship="Self.todo_ibfk_1" FromRole="pharmacies" ToRole="todo" />
@@ -497,7 +425,6 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="debtphtoph" Relationship="Self.debtphtoph_ibfk_1" FromRole="users" ToRole="debtphtoph" />
           <NavigationProperty Name="message_to_patient" Relationship="Self.message_to_patient_ibfk_1" FromRole="users" ToRole="message_to_patient" />
           <NavigationProperty Name="psw" Relationship="Self.psw_ibfk_1" FromRole="users" ToRole="psw" />
           <NavigationProperty Name="user_roles" Relationship="Self.user_roles_ibfk_1" FromRole="users" ToRole="user_roles" />
@@ -517,54 +444,6 @@
           <Property Name="IsEmployedAt" Type="Int32" Nullable="false" />
           <NavigationProperty Name="users" Relationship="Self.users_data_ibfk_1" FromRole="users_data" ToRole="users" />
         </EntityType>
-        <Association Name="debtphtoph_ibfk_1">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="debtphtoph" Type="Self.debtphtoph" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="debtphtoph">
-              <PropertyRef Name="actor_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="debtphtoph_ibfk_2">
-          <End Role="pharmacies" Type="Self.pharmacies" Multiplicity="1" />
-          <End Role="debtphtoph" Type="Self.debtphtoph" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="pharmacies">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="debtphtoph">
-              <PropertyRef Name="from_ph_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="debtphtoph_ibfk_3">
-          <End Role="gyogysz" Type="Self.gyogysz" Multiplicity="1" />
-          <End Role="debtphtoph" Type="Self.debtphtoph" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="gyogysz">
-              <PropertyRef Name="OEP_TTT" />
-            </Principal>
-            <Dependent Role="debtphtoph">
-              <PropertyRef Name="OEP_TTT" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="debtphtoph_ibfk_4">
-          <End Role="pharmacies" Type="Self.pharmacies" Multiplicity="1" />
-          <End Role="debtphtoph" Type="Self.debtphtoph" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="pharmacies">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="debtphtoph">
-              <PropertyRef Name="to_ph_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="message_to_patient_ibfk_1">
           <End Role="users" Type="Self.users" Multiplicity="1" />
           <End Role="message_to_patient" Type="Self.message_to_patient" Multiplicity="*" />
@@ -665,22 +544,6 @@
           <EntitySet Name="user_roles" EntityType="Self.user_roles" />
           <EntitySet Name="users" EntityType="Self.users" />
           <EntitySet Name="users_data" EntityType="Self.users_data" />
-          <AssociationSet Name="debtphtoph_ibfk_1" Association="Self.debtphtoph_ibfk_1">
-            <End Role="users" EntitySet="users" />
-            <End Role="debtphtoph" EntitySet="debtphtoph" />
-          </AssociationSet>
-          <AssociationSet Name="debtphtoph_ibfk_2" Association="Self.debtphtoph_ibfk_2">
-            <End Role="pharmacies" EntitySet="pharmacies" />
-            <End Role="debtphtoph" EntitySet="debtphtoph" />
-          </AssociationSet>
-          <AssociationSet Name="debtphtoph_ibfk_3" Association="Self.debtphtoph_ibfk_3">
-            <End Role="gyogysz" EntitySet="gyogysz" />
-            <End Role="debtphtoph" EntitySet="debtphtoph" />
-          </AssociationSet>
-          <AssociationSet Name="debtphtoph_ibfk_4" Association="Self.debtphtoph_ibfk_4">
-            <End Role="pharmacies" EntitySet="pharmacies" />
-            <End Role="debtphtoph" EntitySet="debtphtoph" />
-          </AssociationSet>
           <AssociationSet Name="message_to_patient_ibfk_1" Association="Self.message_to_patient_ibfk_1">
             <End Role="users" EntitySet="users" />
             <End Role="message_to_patient" EntitySet="message_to_patient" />

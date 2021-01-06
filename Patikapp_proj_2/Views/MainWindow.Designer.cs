@@ -35,13 +35,13 @@ namespace Patikapp_proj_2.Views
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.patikákKezeléseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tartozásokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.patikánakToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.betegnekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tartozásokTallózásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +60,6 @@ namespace Patikapp_proj_2.Views
             // 
             this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator4,
-            this.toolStripSeparator5,
             this.patikákKezeléseToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
@@ -72,11 +71,6 @@ namespace Patikapp_proj_2.Views
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(155, 6);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(155, 6);
             // 
             // patikákKezeléseToolStripMenuItem
             // 
@@ -96,7 +90,8 @@ namespace Patikapp_proj_2.Views
             // 
             this.tartozásokToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.patikánakToolStripMenuItem,
-            this.betegnekToolStripMenuItem});
+            this.betegnekToolStripMenuItem,
+            this.tartozásokTallózásaToolStripMenuItem});
             this.tartozásokToolStripMenuItem.Name = "tartozásokToolStripMenuItem";
             this.tartozásokToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.tartozásokToolStripMenuItem.Text = "Tartozások";
@@ -113,6 +108,13 @@ namespace Patikapp_proj_2.Views
             this.betegnekToolStripMenuItem.Name = "betegnekToolStripMenuItem";
             this.betegnekToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.betegnekToolStripMenuItem.Text = "Betegnek";
+            this.betegnekToolStripMenuItem.Click += new System.EventHandler(this.betegnekToolStripMenuItem_Click);
+            // 
+            // tartozásokTallózásaToolStripMenuItem
+            // 
+            this.tartozásokTallózásaToolStripMenuItem.Name = "tartozásokTallózásaToolStripMenuItem";
+            this.tartozásokTallózásaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tartozásokTallózásaToolStripMenuItem.Text = "Tartozások tallózása";
             // 
             // MainWindow
             // 
@@ -140,7 +142,6 @@ namespace Patikapp_proj_2.Views
 
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem fileMenu;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip;
@@ -148,6 +149,7 @@ namespace Patikapp_proj_2.Views
         private ToolStripMenuItem tartozásokToolStripMenuItem;
         private ToolStripMenuItem patikánakToolStripMenuItem;
         private ToolStripMenuItem betegnekToolStripMenuItem;
+        private ToolStripMenuItem tartozásokTallózásaToolStripMenuItem;
     }
 }
 

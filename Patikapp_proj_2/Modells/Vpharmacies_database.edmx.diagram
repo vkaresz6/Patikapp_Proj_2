@@ -20,10 +20,6 @@
         <EntityTypeShape EntityType="vpharmacies_databaseModel.user_roles" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
         <EntityTypeShape EntityType="vpharmacies_databaseModel.users" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
         <EntityTypeShape EntityType="vpharmacies_databaseModel.users_data" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
-        <AssociationConnector Association="vpharmacies_databaseModel.debtphtoph_ibfk_1" ManuallyRouted="false" />
-        <AssociationConnector Association="vpharmacies_databaseModel.debtphtoph_ibfk_2" ManuallyRouted="false" />
-        <AssociationConnector Association="vpharmacies_databaseModel.debtphtoph_ibfk_3" ManuallyRouted="false" />
-        <AssociationConnector Association="vpharmacies_databaseModel.debtphtoph_ibfk_4" ManuallyRouted="false" />
         <AssociationConnector Association="vpharmacies_databaseModel.message_to_patient_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="vpharmacies_databaseModel.messagestoph_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="vpharmacies_databaseModel.pharmacies_data_ibfk_1" ManuallyRouted="false" />

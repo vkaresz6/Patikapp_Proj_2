@@ -22,10 +22,5 @@ namespace Patikapp_proj_2.Modells
         public int amount { get; set; }
         public bool exists { get; set; }
         public System.DateTime ExpirationDay { get; set; }
-    
-        public virtual users users { get; set; }
-        public virtual pharmacies pharmacies { get; set; }
-        public virtual gyogysz gyogysz { get; set; }
-        public virtual pharmacies pharmacies1 { get; set; }
     }
 }

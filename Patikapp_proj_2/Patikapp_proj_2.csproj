@@ -124,6 +124,8 @@
     <Compile Include="Modells\message_to_patient.cs">
       <DependentUpon>Vpharmacies_database.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modells\Partials\debtphtopa_partial.cs" />
+    <Compile Include="Modells\Partials\debtphtoph_partial.cs" />
     <Compile Include="Modells\Partials\pharmacies_data_partial.cs" />
     <Compile Include="Modells\Partials\pharmacies_Partial.cs" />
     <Compile Include="Modells\Partials\users_partial.cs" />
@@ -154,6 +156,8 @@
     <Compile Include="Modells\user_roles.cs">
       <DependentUpon>Vpharmacies_database.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modells\ViewModells\PhtoPhActiveDebtGridViewModell.cs" />
+    <Compile Include="Modells\ViewModells\PhtoPaActiveDebtGridViewModell.cs" />
     <Compile Include="Modells\ViewModells\PharmaciesManagerViewModell.cs" />
     <Compile Include="Modells\ViewModells\PharmacyBundle.cs" />
     <Compile Include="Modells\Vpharmacies_database.Context.cs">
@@ -175,6 +179,9 @@
     <Compile Include="Presenters\CreatePharmacyActionPresenter.cs" />
     <Compile Include="Presenters\PharmacieManagerPresenter.cs" />
     <Compile Include="Presenters\pharmacymanager_actionpicker_presenter.cs" />
+    <Compile Include="Presenters\TartozasBEtegnekPresenter.cs" />
+    <Compile Include="Presenters\TartozasPatikanakPresenter.cs" />
+    <Compile Include="Presenters\TartozasPatikanak_celpatikaValaszto_presenter.cs" />
     <Compile Include="Presenters\UpdatePharmaciePresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -183,8 +190,14 @@
     <Compile Include="Repositories\CreateNewPharmacyActionRepo.cs" />
     <Compile Include="Interfaces\RepoInterfaces\ICreateNewPharmacyActionRepo.cs" />
     <Compile Include="Interfaces\RepoInterfaces\IAssociateEmployeeRepo.cs" />
+    <Compile Include="Interfaces\RepoInterfaces\ITartozasPatikanakRepo.cs" />
+    <Compile Include="Interfaces\RepoInterfaces\ITartozasPatikanak_celpatikaValaszto_Repo.cs" />
+    <Compile Include="Interfaces\RepoInterfaces\ITartozasBetegnekRepo.cs" />
     <Compile Include="Repositories\PharmaciesManagerViewRepo.cs" />
     <Compile Include="Repositories\pharmacymanager_actionpicker_repo.cs" />
+    <Compile Include="Repositories\TartozasBetegnekRepo.cs" />
+    <Compile Include="Repositories\TartozasPatikanakRepo.cs" />
+    <Compile Include="Repositories\TartozasPatikanak_celpatikaValaszto_Repo.cs" />
     <Compile Include="Repositories\UpdatePharmacyRepo.cs" />
     <Compile Include="Resorurces\CustomControlls\RButton.cs">
       <SubType>Component</SubType>
@@ -209,6 +222,9 @@
     <Compile Include="Interfaces\ViewInterfaces\ICreateNewPharmacyActionForm.cs" />
     <Compile Include="Interfaces\ViewInterfaces\IUpdatePharmacy.cs" />
     <Compile Include="Interfaces\ViewInterfaces\IAssiciateEmployeeForm.cs" />
+    <Compile Include="Interfaces\ViewInterfaces\ITartozasPatikanak.cs" />
+    <Compile Include="Interfaces\ViewInterfaces\ITartozasPatikanak_celpatikaValaszto.cs" />
+    <Compile Include="Interfaces\ViewInterfaces\ITartozasBetegnek.cs" />
     <Compile Include="Views\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,17 +249,29 @@
     <Compile Include="Views\PharmacyManager_action picker.Designer.cs">
       <DependentUpon>PharmacyManager_action picker.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\TartozasBetegnekForm.cs">
+    <Compile Include="Views\TartozasBetegnek.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\TartozasBetegnekForm.Designer.cs">
-      <DependentUpon>TartozasBetegnekForm.cs</DependentUpon>
+    <Compile Include="Views\TartozasBetegnek.Designer.cs">
+      <DependentUpon>TartozasBetegnek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TartozasBetegnekForraspatikaValaszto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TartozasBetegnekForraspatikaValaszto.Designer.cs">
+      <DependentUpon>TartozasBetegnekForraspatikaValaszto.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\TartozasPatikanak.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\TartozasPatikanak.Designer.cs">
       <DependentUpon>TartozasPatikanak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TartozasPatikanak_celpatikaValaszto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TartozasPatikanak_celpatikaValaszto.Designer.cs">
+      <DependentUpon>TartozasPatikanak_celpatikaValaszto.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\TartozasPatikanak_Patikavalaszto.cs">
       <SubType>Form</SubType>
@@ -289,11 +317,17 @@
     <EmbeddedResource Include="Views\PharmacyManager_action picker.resx">
       <DependentUpon>PharmacyManager_action picker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\TartozasBetegnekForm.resx">
-      <DependentUpon>TartozasBetegnekForm.cs</DependentUpon>
+    <EmbeddedResource Include="Views\TartozasBetegnek.resx">
+      <DependentUpon>TartozasBetegnek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TartozasBetegnekForraspatikaValaszto.resx">
+      <DependentUpon>TartozasBetegnekForraspatikaValaszto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TartozasPatikanak.resx">
       <DependentUpon>TartozasPatikanak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TartozasPatikanak_celpatikaValaszto.resx">
+      <DependentUpon>TartozasPatikanak_celpatikaValaszto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TartozasPatikanak_Patikavalaszto.resx">
       <DependentUpon>TartozasPatikanak_Patikavalaszto.cs</DependentUpon>

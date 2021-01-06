@@ -75,5 +75,12 @@ namespace Patikapp_proj_2.Views
             childForm.MdiParent = this;
             childForm.Show();
         }
+
+        private void betegnekToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form v = new TartozasBetegnekForraspatikaValaszto();
+            v.MdiParent = this;
+            v.Show();
+        }
     }
 }
