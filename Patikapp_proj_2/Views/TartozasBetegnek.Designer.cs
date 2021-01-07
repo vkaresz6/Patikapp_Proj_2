@@ -77,7 +77,7 @@
             this.UserPickerGridView.Size = new System.Drawing.Size(240, 396);
             this.UserPickerGridView.TabIndex = 0;
             this.UserPickerGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserPickerGridView_CellContentClick);
-            this.UserPickerGridView.SelectionChanged += new System.EventHandler(this.UserPickerGridView_SelectionChanged);
+            //this.UserPickerGridView.SelectionChanged += new System.EventHandler(this.UserPickerGridView_SelectionChanged);
             // 
             // idDataGridViewTextBoxColumn
             // 

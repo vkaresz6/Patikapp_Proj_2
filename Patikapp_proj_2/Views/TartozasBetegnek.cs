@@ -59,22 +59,29 @@ namespace Patikapp_proj_2.Views
 
         private void AddDebt_Click(object sender, EventArgs e)
         {
-            presenter.addDebt(Int32.Parse(gyogyszDataGridView.SelectedCells[0].Value.ToString()));
+            presenter.addDebt(Int32.Parse(gyogyszDataGridView.SelectedCells[0].Value.ToString()), Int32.Parse(UserPickerGridView.SelectedCells[0].Value.ToString()));
 
         }
 
         private void DeleteDebt_Click(object sender, EventArgs e)
         {
-            presenter.deleteDebt();
+            
+            presenter.deleteDebt(Int32.Parse(UserPickerGridView.SelectedCells[0].Value.ToString()));
         }
 
         private void UserPickerGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            presenter.fillDebtByUserId(Int32.Parse(UserPickerGridView.SelectedCells[0].Value.ToString()));
+
         }
 
-        private void UserPickerGridView_SelectionChanged(object sender, EventArgs e)
-        {
-            ActiveDebtGridView1.DataSource = 
-        }
+        //private void UserPickerGridView_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    if (UserPickerGridView.SelectedCells.Count != 0)
+        //    {
+        //        presenter.fillDebtByUserId(Int32.Parse(UserPickerGridView.SelectedCells[0].Value.ToString()));
+
+        //    }
+        //}
     }
 }

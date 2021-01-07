@@ -69,6 +69,7 @@ namespace Patikapp_proj_2.Repositories
         public void addDebt(int OEPTTT, int userId, int amount)
         {
             db.debtphtopa.Add(new debtphtopa(selectedPid, userId, OEPTTT, amount));
+            db.SaveChanges();
         }
 
         public void deleteDebt(int debtId)
@@ -77,7 +78,29 @@ namespace Patikapp_proj_2.Repositories
             db.debtphtopa.Remove(db.debtphtopa.Where(x => x.id == debtId).FirstOrDefault());
             db.SaveChanges();
         }
+        /// <summary>
+        /// gets the debt of an individual user
+        /// </summary>
+        /// <param name="id">desired user id</param>
+        /// <returns></returns>
+        public List<PhtoPaActiveDebtGridViewModell> getdebtByUserId0(int id)
+        {
+            List<PhtoPaActiveDebtGridViewModell> result = new List<PhtoPaActiveDebtGridViewModell>();
+            foreach (var item in db.debtphtopa.Where(x => x.to_pa_id == id).ToList())
+            {
+                result.Add(new PhtoPaActiveDebtGridViewModell(
+                                item.id,
+                                db.pharmacies.Where(x => x.id == item.from_ph_id).FirstOrDefault().name,
+                                db.users.Where(x => x.id == item.to_pa_id).FirstOrDefault().username,
+                                item.amount,
+                                item.OEP_TTT,
+                                db.gyogysz.Where( x => x.OEP_TTT == item.OEP_TTT).FirstOrDefault().OEP_NEV
 
+                    ));
+            }
+
+            return result;
+        }
 
     }
 }

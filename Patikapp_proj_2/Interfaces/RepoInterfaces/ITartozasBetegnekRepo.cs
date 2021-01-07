@@ -10,5 +10,6 @@ namespace Patikapp_proj_2.Repositories
         void deleteDebt(int debtId);
         List<PhtoPaActiveDebtGridViewModell> getActiveDebtsContent();
         List<gyogysz> searchGyogysz(string param);
+        List<PhtoPaActiveDebtGridViewModell> getdebtByUserId0(int id);
     }
 }
