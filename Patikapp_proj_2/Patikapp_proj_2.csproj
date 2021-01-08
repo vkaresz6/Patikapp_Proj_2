@@ -177,6 +177,7 @@
     </Compile>
     <Compile Include="Presenters\AssociatePresenter.cs" />
     <Compile Include="Presenters\CreatePharmacyActionPresenter.cs" />
+    <Compile Include="Presenters\MainWindowPresenter.cs" />
     <Compile Include="Presenters\PharmacieManagerPresenter.cs" />
     <Compile Include="Presenters\pharmacymanager_actionpicker_presenter.cs" />
     <Compile Include="Presenters\TartozasBEtegnekPresenter.cs" />
@@ -195,6 +196,7 @@
     <Compile Include="Interfaces\RepoInterfaces\ITartozasBetegnekRepo.cs" />
     <Compile Include="Repositories\PharmaciesManagerViewRepo.cs" />
     <Compile Include="Repositories\pharmacymanager_actionpicker_repo.cs" />
+    <Compile Include="Repositories\SchedulerRepo.cs" />
     <Compile Include="Repositories\TartozasBetegnekRepo.cs" />
     <Compile Include="Repositories\TartozasPatikanakRepo.cs" />
     <Compile Include="Repositories\TartozasPatikanak_celpatikaValaszto_Repo.cs" />
@@ -207,6 +209,8 @@
     </Compile>
     <Compile Include="Interfaces\ViewInterfaces\IPharmaciesManager.cs" />
     <Compile Include="Interfaces\ViewInterfaces\IPharmacyManager_action_picker.cs" />
+    <Compile Include="Services\ScheduleFactory.cs" />
+    <Compile Include="Services\SchedulerService.cs" />
     <Compile Include="Views\AssociateEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +253,7 @@
     <Compile Include="Views\PharmacyManager_action picker.Designer.cs">
       <DependentUpon>PharmacyManager_action picker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SchedulerForm.cs" />
     <Compile Include="Views\TartozasBetegnek.cs">
       <SubType>Form</SubType>
     </Compile>
