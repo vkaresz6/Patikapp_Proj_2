@@ -19,7 +19,6 @@ namespace Patikapp_proj_2.Modells
         {
             this.messagestoph = new HashSet<messagestoph>();
             this.pharmacies_data = new HashSet<pharmacies_data>();
-            this.todo = new HashSet<todo>();
         }
     
         public int id { get; set; }
@@ -29,7 +28,5 @@ namespace Patikapp_proj_2.Modells
         public virtual ICollection<messagestoph> messagestoph { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<pharmacies_data> pharmacies_data { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<todo> todo { get; set; }
     }
 }

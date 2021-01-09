@@ -160,6 +160,7 @@
     <Compile Include="Modells\ViewModells\PhtoPaActiveDebtGridViewModell.cs" />
     <Compile Include="Modells\ViewModells\PharmaciesManagerViewModell.cs" />
     <Compile Include="Modells\ViewModells\PharmacyBundle.cs" />
+    <Compile Include="Modells\ViewModells\TodoGridViewModell.cs" />
     <Compile Include="Modells\Vpharmacies_database.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -180,6 +181,7 @@
     <Compile Include="Presenters\MainWindowPresenter.cs" />
     <Compile Include="Presenters\PharmacieManagerPresenter.cs" />
     <Compile Include="Presenters\pharmacymanager_actionpicker_presenter.cs" />
+    <Compile Include="Presenters\SchedulerPresenter.cs" />
     <Compile Include="Presenters\TartozasBEtegnekPresenter.cs" />
     <Compile Include="Presenters\TartozasPatikanakPresenter.cs" />
     <Compile Include="Presenters\TartozasPatikanak_celpatikaValaszto_presenter.cs" />
@@ -194,6 +196,7 @@
     <Compile Include="Interfaces\RepoInterfaces\ITartozasPatikanakRepo.cs" />
     <Compile Include="Interfaces\RepoInterfaces\ITartozasPatikanak_celpatikaValaszto_Repo.cs" />
     <Compile Include="Interfaces\RepoInterfaces\ITartozasBetegnekRepo.cs" />
+    <Compile Include="Interfaces\RepoInterfaces\ISchedulerRepo.cs" />
     <Compile Include="Repositories\PharmaciesManagerViewRepo.cs" />
     <Compile Include="Repositories\pharmacymanager_actionpicker_repo.cs" />
     <Compile Include="Repositories\SchedulerRepo.cs" />
@@ -229,6 +232,7 @@
     <Compile Include="Interfaces\ViewInterfaces\ITartozasPatikanak.cs" />
     <Compile Include="Interfaces\ViewInterfaces\ITartozasPatikanak_celpatikaValaszto.cs" />
     <Compile Include="Interfaces\ViewInterfaces\ITartozasBetegnek.cs" />
+    <Compile Include="Interfaces\ViewInterfaces\ISchedulerform.cs" />
     <Compile Include="Views\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,7 +257,18 @@
     <Compile Include="Views\PharmacyManager_action picker.Designer.cs">
       <DependentUpon>PharmacyManager_action picker.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\SchedulerForm.cs" />
+    <Compile Include="Views\Schedulerform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Schedulerform.Designer.cs">
+      <DependentUpon>Schedulerform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SchedulerFormPharmacypicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SchedulerFormPharmacypicker.Designer.cs">
+      <DependentUpon>SchedulerFormPharmacypicker.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\TartozasBetegnek.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,6 +336,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PharmacyManager_action picker.resx">
       <DependentUpon>PharmacyManager_action picker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Schedulerform.resx">
+      <DependentUpon>Schedulerform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SchedulerFormPharmacypicker.resx">
+      <DependentUpon>SchedulerFormPharmacypicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TartozasBetegnek.resx">
       <DependentUpon>TartozasBetegnek.cs</DependentUpon>

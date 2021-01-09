@@ -110,6 +110,9 @@
           <Property Name="ph_id" Type="int" Nullable="false" />
           <Property Name="todo" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="photo" Type="blob" Nullable="false" />
+          <Property Name="Expiration" Type="date" Nullable="false" />
+          <Property Name="alarmMinutes" Type="int" Nullable="false" />
+          <Property Name="alarmhours" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="todolist">
           <Key>
@@ -199,18 +202,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="todo_ibfk_1">
-          <End Role="pharmacies" Type="Self.pharmacies" Multiplicity="1" />
-          <End Role="todo" Type="Self.todo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="pharmacies">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="todo">
-              <PropertyRef Name="ph_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="user_roles_ibfk_1">
           <End Role="users" Type="Self.users" Multiplicity="1" />
           <End Role="user_roles" Type="Self.user_roles" Multiplicity="*" />
@@ -266,10 +257,6 @@
           <AssociationSet Name="psw_ibfk_1" Association="Self.psw_ibfk_1">
             <End Role="users" EntitySet="users" />
             <End Role="psw" EntitySet="psw" />
-          </AssociationSet>
-          <AssociationSet Name="todo_ibfk_1" Association="Self.todo_ibfk_1">
-            <End Role="pharmacies" EntitySet="pharmacies" />
-            <End Role="todo" EntitySet="todo" />
           </AssociationSet>
           <AssociationSet Name="user_roles_ibfk_1" Association="Self.user_roles_ibfk_1">
             <End Role="users" EntitySet="users" />
@@ -357,7 +344,6 @@
           <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="messagestoph" Relationship="Self.messagestoph_ibfk_1" FromRole="pharmacies" ToRole="messagestoph" />
           <NavigationProperty Name="pharmacies_data" Relationship="Self.pharmacies_data_ibfk_1" FromRole="pharmacies" ToRole="pharmacies_data" />
-          <NavigationProperty Name="todo" Relationship="Self.todo_ibfk_1" FromRole="pharmacies" ToRole="todo" />
         </EntityType>
         <EntityType Name="pharmacies_data">
           <Key>
@@ -396,7 +382,9 @@
           <Property Name="ph_id" Type="Int32" Nullable="false" />
           <Property Name="todo1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <NavigationProperty Name="pharmacies" Relationship="Self.todo_ibfk_1" FromRole="todo" ToRole="pharmacies" />
+          <Property Name="Expiration" Type="DateTime" Nullable="false" />
+          <Property Name="alarmMinutes" Type="Int32" Nullable="false" />
+          <Property Name="alarmhours" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="todolist">
           <Key>
@@ -480,18 +468,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="todo_ibfk_1">
-          <End Role="pharmacies" Type="Self.pharmacies" Multiplicity="1" />
-          <End Role="todo" Type="Self.todo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="pharmacies">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="todo">
-              <PropertyRef Name="ph_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="psw_ibfk_1">
           <End Role="users" Type="Self.users" Multiplicity="1" />
           <End Role="psw" Type="Self.psw" Multiplicity="*" />
@@ -555,10 +531,6 @@
           <AssociationSet Name="pharmacies_data_ibfk_1" Association="Self.pharmacies_data_ibfk_1">
             <End Role="pharmacies" EntitySet="pharmacies" />
             <End Role="pharmacies_data" EntitySet="pharmacies_data" />
-          </AssociationSet>
-          <AssociationSet Name="todo_ibfk_1" Association="Self.todo_ibfk_1">
-            <End Role="pharmacies" EntitySet="pharmacies" />
-            <End Role="todo" EntitySet="todo" />
           </AssociationSet>
           <AssociationSet Name="psw_ibfk_1" Association="Self.psw_ibfk_1">
             <End Role="users" EntitySet="users" />
@@ -689,6 +661,9 @@
           <EntitySetMapping Name="todo">
             <EntityTypeMapping TypeName="vpharmacies_databaseModel.todo">
               <MappingFragment StoreEntitySet="todo">
+                <ScalarProperty Name="alarmhours" ColumnName="alarmhours" />
+                <ScalarProperty Name="alarmMinutes" ColumnName="alarmMinutes" />
+                <ScalarProperty Name="Expiration" ColumnName="Expiration" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="ph_id" ColumnName="ph_id" />
                 <ScalarProperty Name="todo1" ColumnName="todo" />
