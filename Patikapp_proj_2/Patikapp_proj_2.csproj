@@ -406,6 +406,7 @@
       <DependentUpon>Vpharmacies_database.edmx</DependentUpon>
       <LastGenOutput>Vpharmacies_database.cs</LastGenOutput>
     </Content>
+    <Content Include="Resorurces\CustomControlls\vpharmacies_database %285%29.sql" />
     <Content Include="Resorurces\depositphotos_76156585-stock-illustration-medical-symbol-health-icon.jpg" />
   </ItemGroup>
   <ItemGroup>
