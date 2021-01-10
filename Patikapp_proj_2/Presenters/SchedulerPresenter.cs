@@ -66,7 +66,6 @@ namespace Patikapp_proj_2.Presenters
             param.Expiration = _v.Exp.Value;
             param.alarmhours = Int32.Parse(_v.Hh.Text);
             param.alarmMinutes = Int32.Parse(_v.Mm.Text);
-            param.photo = null;
             param.ph_id = pid;
             param.todo1 = _v.RichTextBox2.Text;
             _r.AddTo(param);

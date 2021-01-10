@@ -15,7 +15,6 @@
         <EntityTypeShape EntityType="vpharmacies_databaseModel.pharmacies_data" Width="1.5" PointX="6" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="vpharmacies_databaseModel.psw" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="vpharmacies_databaseModel.roles" Width="1.5" PointX="5.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="vpharmacies_databaseModel.todo" Width="1.5" PointX="6" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="vpharmacies_databaseModel.todolist" Width="1.5" PointX="7.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="vpharmacies_databaseModel.user_roles" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
         <EntityTypeShape EntityType="vpharmacies_databaseModel.users" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
@@ -26,6 +25,7 @@
         <AssociationConnector Association="vpharmacies_databaseModel.psw_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="vpharmacies_databaseModel.user_roles_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="vpharmacies_databaseModel.users_data_ibfk_1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="vpharmacies_databaseModel.todo" Width="1.5" PointX="8.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

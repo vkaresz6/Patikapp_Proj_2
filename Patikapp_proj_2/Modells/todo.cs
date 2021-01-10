@@ -17,7 +17,6 @@ namespace Patikapp_proj_2.Modells
         public int id { get; set; }
         public int ph_id { get; set; }
         public string todo1 { get; set; }
-        public byte[] photo { get; set; }
         public System.DateTime Expiration { get; set; }
         public int alarmMinutes { get; set; }
         public int alarmhours { get; set; }

@@ -109,7 +109,6 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ph_id" Type="int" Nullable="false" />
           <Property Name="todo" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="photo" Type="blob" Nullable="false" />
           <Property Name="Expiration" Type="date" Nullable="false" />
           <Property Name="alarmMinutes" Type="int" Nullable="false" />
           <Property Name="alarmhours" Type="int" Nullable="false" />
@@ -374,18 +373,6 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="role" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityType Name="todo">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ph_id" Type="Int32" Nullable="false" />
-          <Property Name="todo1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <Property Name="Expiration" Type="DateTime" Nullable="false" />
-          <Property Name="alarmMinutes" Type="Int32" Nullable="false" />
-          <Property Name="alarmhours" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="todolist">
           <Key>
             <PropertyRef Name="id" />
@@ -515,7 +502,6 @@
           <EntitySet Name="pharmacies_data" EntityType="Self.pharmacies_data" />
           <EntitySet Name="psw" EntityType="Self.psw" />
           <EntitySet Name="roles" EntityType="Self.roles" />
-          <EntitySet Name="todo" EntityType="Self.todo" />
           <EntitySet Name="todolist" EntityType="Self.todolist" />
           <EntitySet Name="user_roles" EntityType="Self.user_roles" />
           <EntitySet Name="users" EntityType="Self.users" />
@@ -544,7 +530,19 @@
             <End Role="users" EntitySet="users" />
             <End Role="users_data" EntitySet="users_data" />
           </AssociationSet>
+          <EntitySet Name="todo" EntityType="vpharmacies_databaseModel.todo" />
         </EntityContainer>
+        <EntityType Name="todo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ph_id" Type="Int32" Nullable="false" />
+          <Property Name="todo1" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Expiration" Type="DateTime" Nullable="false" />
+          <Property Name="alarmMinutes" Type="Int32" Nullable="false" />
+          <Property Name="alarmhours" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -658,19 +656,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="todo">
-            <EntityTypeMapping TypeName="vpharmacies_databaseModel.todo">
-              <MappingFragment StoreEntitySet="todo">
-                <ScalarProperty Name="alarmhours" ColumnName="alarmhours" />
-                <ScalarProperty Name="alarmMinutes" ColumnName="alarmMinutes" />
-                <ScalarProperty Name="Expiration" ColumnName="Expiration" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="ph_id" ColumnName="ph_id" />
-                <ScalarProperty Name="todo1" ColumnName="todo" />
-                <ScalarProperty Name="photo" ColumnName="photo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="todolist">
             <EntityTypeMapping TypeName="vpharmacies_databaseModel.todolist">
               <MappingFragment StoreEntitySet="todolist">
@@ -712,6 +697,18 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Comment" ColumnName="Comment" />
                 <ScalarProperty Name="IsEmployedAt" ColumnName="IsEmployedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="todo">
+            <EntityTypeMapping TypeName="vpharmacies_databaseModel.todo">
+              <MappingFragment StoreEntitySet="todo">
+                <ScalarProperty Name="alarmhours" ColumnName="alarmhours" />
+                <ScalarProperty Name="alarmMinutes" ColumnName="alarmMinutes" />
+                <ScalarProperty Name="Expiration" ColumnName="Expiration" />
+                <ScalarProperty Name="todo1" ColumnName="todo" />
+                <ScalarProperty Name="ph_id" ColumnName="ph_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

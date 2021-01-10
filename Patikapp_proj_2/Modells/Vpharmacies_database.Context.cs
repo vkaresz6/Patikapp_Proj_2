@@ -35,10 +35,10 @@ namespace Patikapp_proj_2.Modells
         public virtual DbSet<pharmacies_data> pharmacies_data { get; set; }
         public virtual DbSet<psw> psw { get; set; }
         public virtual DbSet<roles> roles { get; set; }
-        public virtual DbSet<todo> todo { get; set; }
         public virtual DbSet<todolist> todolist { get; set; }
         public virtual DbSet<user_roles> user_roles { get; set; }
         public virtual DbSet<users> users { get; set; }
         public virtual DbSet<users_data> users_data { get; set; }
+        public virtual DbSet<todo> todo { get; set; }
     }
 }
