@@ -54,7 +54,7 @@ namespace Patikapp_proj_2.Repositories
                     result.Add(item);
                 }
             }
-
+            db.SaveChanges();
             return result;
         }
 

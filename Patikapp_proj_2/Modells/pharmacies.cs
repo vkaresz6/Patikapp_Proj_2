@@ -14,19 +14,7 @@ namespace Patikapp_proj_2.Modells
     
     public partial class pharmacies
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public pharmacies()
-        {
-            this.messagestoph = new HashSet<messagestoph>();
-            this.pharmacies_data = new HashSet<pharmacies_data>();
-        }
-    
         public int id { get; set; }
         public string name { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<messagestoph> messagestoph { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<pharmacies_data> pharmacies_data { get; set; }
     }
 }

@@ -10,5 +10,6 @@ namespace Patikapp_proj_2.Views
         TextBox NameTextBox1 { get; set; }
         TextBox PhoneTextBox1 { get; set; }
         TextBox WebTextBox1 { get; set; }
+        void HideClose();
     }
 }

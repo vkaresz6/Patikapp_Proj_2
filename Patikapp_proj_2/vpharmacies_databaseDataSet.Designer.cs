@@ -4051,8 +4051,6 @@ namespace Patikapp_proj_2 {
             
             private global::System.Data.DataColumn columntodo;
             
-            private global::System.Data.DataColumn columnphoto;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public todoDataTable() {
@@ -4112,14 +4110,6 @@ namespace Patikapp_proj_2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn photoColumn {
-                get {
-                    return this.columnphoto;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4155,13 +4145,12 @@ namespace Patikapp_proj_2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public todoRow AddtodoRow(pharmaciesRow parentpharmaciesRowBytodo_ibfk_1, string todo, byte[] photo) {
+            public todoRow AddtodoRow(pharmaciesRow parentpharmaciesRowBytodo_ibfk_1, string todo) {
                 todoRow rowtodoRow = ((todoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        todo,
-                        photo};
+                        todo};
                 if ((parentpharmaciesRowBytodo_ibfk_1 != null)) {
                     columnValuesArray[1] = parentpharmaciesRowBytodo_ibfk_1[0];
                 }
@@ -4197,7 +4186,6 @@ namespace Patikapp_proj_2 {
                 this.columnid = base.Columns["id"];
                 this.columnph_id = base.Columns["ph_id"];
                 this.columntodo = base.Columns["todo"];
-                this.columnphoto = base.Columns["photo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4209,8 +4197,6 @@ namespace Patikapp_proj_2 {
                 base.Columns.Add(this.columnph_id);
                 this.columntodo = new global::System.Data.DataColumn("todo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntodo);
-                this.columnphoto = new global::System.Data.DataColumn("photo", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnphoto);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -4221,7 +4207,6 @@ namespace Patikapp_proj_2 {
                 this.columnph_id.AllowDBNull = false;
                 this.columntodo.AllowDBNull = false;
                 this.columntodo.MaxLength = 255;
-                this.columnphoto.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6562,17 +6547,6 @@ namespace Patikapp_proj_2 {
                 }
                 set {
                     this[this.tabletodo.todoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public byte[] photo {
-                get {
-                    return ((byte[])(this[this.tabletodo.photoColumn]));
-                }
-                set {
-                    this[this.tabletodo.photoColumn] = value;
                 }
             }
             
@@ -12271,7 +12245,6 @@ namespace Patikapp_proj_2.vpharmacies_databaseDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("ph_id", "ph_id");
             tableMapping.ColumnMappings.Add("todo", "todo");
-            tableMapping.ColumnMappings.Add("photo", "photo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -12303,7 +12276,7 @@ namespace Patikapp_proj_2.vpharmacies_databaseDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `todo` (`ph_id`, `todo`, `photo`) VALUES (@p1, @p2, @p3)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `todo` (`ph_id`, `todo`) VALUES (@p1, @p2)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -12321,18 +12294,10 @@ namespace Patikapp_proj_2.vpharmacies_databaseDataSetTableAdapters {
             param.SourceColumn = "todo";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.Object;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Blob;
-            param.IsNullable = true;
-            param.SourceColumn = "photo";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `todo` SET `ph_id` = @p1, `todo` = @p2, `photo` = @p3 WHERE ((`id` = @p4) " +
-                "AND (`ph_id` = @p5) AND (`todo` = @p6))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `todo` SET `ph_id` = @p1, `todo` = @p2, WHERE ((`id` = @p4) AND (`ph_id` =" +
+                " @p5) AND (`todo` = @p6))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -12348,14 +12313,6 @@ namespace Patikapp_proj_2.vpharmacies_databaseDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "todo";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.Object;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Blob;
-            param.IsNullable = true;
-            param.SourceColumn = "photo";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -12397,7 +12354,7 @@ namespace Patikapp_proj_2.vpharmacies_databaseDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `id`, `ph_id`, `todo`, `photo` FROM `todo`";
+            this._commandCollection[0].CommandText = "SELECT `id`, `ph_id`, `todo` FROM `todo`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -12487,19 +12444,13 @@ namespace Patikapp_proj_2.vpharmacies_databaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int p1, string p2, object p3) {
+        public virtual int Insert(int p1, string p2) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1));
             if ((p2 == null)) {
                 throw new global::System.ArgumentNullException("p2");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p2));
-            }
-            if ((p3 == null)) {
-                throw new global::System.ArgumentNullException("p3");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((object)(p3));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -12521,7 +12472,7 @@ namespace Patikapp_proj_2.vpharmacies_databaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int p1, string p2, object p3, int p4, int p5, string p6) {
+        public virtual int Update(int p1, string p2, int p4, int p5, string p6) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(p1));
             if ((p2 == null)) {
                 throw new global::System.ArgumentNullException("p2");
@@ -12529,19 +12480,13 @@ namespace Patikapp_proj_2.vpharmacies_databaseDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p2));
             }
-            if ((p3 == null)) {
-                throw new global::System.ArgumentNullException("p3");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(p3));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p4));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(p5));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(p4));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p5));
             if ((p6 == null)) {
                 throw new global::System.ArgumentNullException("p6");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p6));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p6));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 

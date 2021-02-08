@@ -17,10 +17,12 @@ namespace Patikapp_proj_2.Views
     {
         int selected;
         UpdatePharmaciePresenter presenter;
-        public UpdatePharmacy(int selected)
+        PharmaciesManager phMng;
+        public UpdatePharmacy(int selected, PharmaciesManager phMng)
         {
             InitializeComponent();
             this.selected = selected;
+            this.phMng = phMng;
         }
 
         public TextBox WebTextBox1 { get => WebTextBox; set => WebTextBox = value; }
@@ -30,6 +32,15 @@ namespace Patikapp_proj_2.Views
         public Button CreatePharmacyButton1 { get => updateButton; set => updateButton = value; }
         public TextBox NameTextBox1 { get => NameTextBox; set => NameTextBox = value; }
 
+        public void HideClose()
+        {
+            PharmacieManagerPresenter remotePresenter = new PharmacieManagerPresenter(phMng, new PharmaciesManagerViewRepo());
+            remotePresenter.fillView();
+            this.Hide();
+          this.Close();
+            
+        }
+
         private void UpdatePharmacy_Load(object sender, EventArgs e)
         {
             presenter = new UpdatePharmaciePresenter(new Patikapp_proj_2.Repositories.IUpdatePharmacyRepo(), this, selected);
@@ -38,6 +49,11 @@ namespace Patikapp_proj_2.Views
         private void updateButton_Click(object sender, EventArgs e)
         {
             presenter.SaveChanges();
+            PharmaciesManager view = new PharmaciesManager();
+            view.MdiParent = this.MdiParent;
+            view.Show();
+
+            
         }
     }
 }

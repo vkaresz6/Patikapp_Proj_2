@@ -26,6 +26,7 @@ namespace Patikapp_proj_2.Views
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            MessageBox.Show(dataGridView1.SelectedCells[0].Value.ToString());
             TartozasBetegnek v = new TartozasBetegnek(Int32.Parse(dataGridView1.SelectedCells[0].Value.ToString()));
             v.MdiParent = this.MdiParent;
             v.Show();

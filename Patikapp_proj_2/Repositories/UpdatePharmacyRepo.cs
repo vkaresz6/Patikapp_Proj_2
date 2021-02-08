@@ -32,8 +32,10 @@ namespace Patikapp_proj_2.Repositories
 
         public void updatePharmacy(pharmacies_data param)
         {
-
             db.pharmacies_data.AddOrUpdate(new pharmacies_data[] { param });
+            db.SaveChanges();
         }
+
+
     }
 }

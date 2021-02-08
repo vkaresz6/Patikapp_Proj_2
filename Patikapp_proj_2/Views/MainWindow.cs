@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Patikapp_proj_2.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Patikapp_proj_2.Views
 {
-    public partial class MainWindow : Form
+    public partial class MainWindow : Form, IMainWindow
     {
         private int childFormNumber = 0;
 
@@ -20,6 +22,30 @@ namespace Patikapp_proj_2.Views
         {
             InitializeComponent();
         }
+
+        public void enableAll()
+        {
+            this.tartozásokToolStripMenuItem.Enabled = true;
+            this.eszközökToolStripMenuItem.Enabled = true;
+            this.kilépésToolStripMenuItem.Enabled = true;
+            this.fileMenu.Enabled = true;
+        }
+
+        public void disableAll()
+        {
+            this.tartozásokToolStripMenuItem.Enabled = false;
+            this.eszközökToolStripMenuItem.Enabled = false;
+            this.kilépésToolStripMenuItem.Enabled = false;
+            this.fileMenu.Enabled = false;
+        }
+
+        public void adminFalse()
+        {
+            felhasználókKezeléseToolStripMenuItem.Enabled = false;
+            patikákKezeléseToolStripMenuItem1.Enabled = false;
+        }
+
+
 
         private void ShowNewForm(object sender, EventArgs e)
         {
@@ -51,13 +77,14 @@ namespace Patikapp_proj_2.Views
             }
         }
 
+
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        
-                private void patikákKezeléseToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void patikákKezeléseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form childForm = new PharmaciesManager();
             childForm.MdiParent = this;
@@ -66,6 +93,14 @@ namespace Patikapp_proj_2.Views
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            SchedulerRepo r = new SchedulerRepo();
+            //indítsd el a Timereket
+
+
+
+            Form childForm = new LoginForm(this);
+            childForm.MdiParent = this;
+            childForm.Show();
 
         }
 
@@ -81,6 +116,39 @@ namespace Patikapp_proj_2.Views
             Form v = new TartozasBetegnekForraspatikaValaszto();
             v.MdiParent = this;
             v.Show();
+        }
+
+        private void tennivalókToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form v = new SchedulerFormPharmacypicker();
+            v.MdiParent = this;
+            v.Show();
+        }
+
+        private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+            this.Dispose();
+        }
+
+        private void patikákKezeléseToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form childForm = new PharmaciesManager();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void felhasználókKezeléseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form childForm = new UserManagerView();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

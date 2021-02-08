@@ -39,9 +39,9 @@
             this.labelAdress = new System.Windows.Forms.Label();
             this.AdressTextBox = new System.Windows.Forms.TextBox();
             this.EmployeeManagerGroupBox = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.AddEmployeeButton = new System.Windows.Forms.Button();
             this.íremoveEmployeeButton = new System.Windows.Forms.Button();
+            this.AddEmployeeButton = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ReadyButton = new System.Windows.Forms.Button();
             this.CancellButton = new System.Windows.Forms.Button();
             this.EmployeeManagerGroupBox.SuspendLayout();
@@ -167,14 +167,16 @@
             this.EmployeeManagerGroupBox.TabStop = false;
             this.EmployeeManagerGroupBox.Text = "Dolgozók kezelése";
             // 
-            // dataGridView1
+            // íremoveEmployeeButton
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(303, 183);
-            this.dataGridView1.TabIndex = 0;
+            this.íremoveEmployeeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.íremoveEmployeeButton.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.íremoveEmployeeButton.Location = new System.Drawing.Point(189, 208);
+            this.íremoveEmployeeButton.Name = "íremoveEmployeeButton";
+            this.íremoveEmployeeButton.Size = new System.Drawing.Size(120, 23);
+            this.íremoveEmployeeButton.TabIndex = 2;
+            this.íremoveEmployeeButton.Text = "Eltávolít";
+            this.íremoveEmployeeButton.UseVisualStyleBackColor = false;
             // 
             // AddEmployeeButton
             // 
@@ -187,16 +189,14 @@
             this.AddEmployeeButton.Text = "Hozzáad";
             this.AddEmployeeButton.UseVisualStyleBackColor = false;
             // 
-            // íremoveEmployeeButton
+            // dataGridView1
             // 
-            this.íremoveEmployeeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.íremoveEmployeeButton.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.íremoveEmployeeButton.Location = new System.Drawing.Point(189, 208);
-            this.íremoveEmployeeButton.Name = "íremoveEmployeeButton";
-            this.íremoveEmployeeButton.Size = new System.Drawing.Size(120, 23);
-            this.íremoveEmployeeButton.TabIndex = 2;
-            this.íremoveEmployeeButton.Text = "Eltávolít";
-            this.íremoveEmployeeButton.UseVisualStyleBackColor = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(303, 183);
+            this.dataGridView1.TabIndex = 0;
             // 
             // ReadyButton
             // 
@@ -209,6 +209,7 @@
             this.ReadyButton.TabIndex = 35;
             this.ReadyButton.Text = "Kész";
             this.ReadyButton.UseVisualStyleBackColor = false;
+            this.ReadyButton.Click += new System.EventHandler(this.ReadyButton_Click);
             // 
             // CancellButton
             // 

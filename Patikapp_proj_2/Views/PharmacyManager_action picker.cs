@@ -19,12 +19,14 @@ namespace Patikapp_proj_2.Views
         int selected_pharmacy_id;
         String selected_pharmacy_name;
         pharmacymanager_actionpicker_presenter presenter;
-        public PharmacyManager_action_picker(int id, String name)
+        PharmaciesManager phMng;
+        public PharmacyManager_action_picker(int id, String name, PharmaciesManager phMng)
         {
             InitializeComponent();
             selected_pharmacy_id = id;
             selected_pharmacy_name = name;
             presenter = new pharmacymanager_actionpicker_presenter(this, new pharmacymanager_actionpicker_repo());
+            this.phMng = phMng;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -52,6 +54,8 @@ namespace Patikapp_proj_2.Views
         {
             presenter.delete_action(selected_pharmacy_id);
             this.Close();
+            this.Hide();
+            
         }
 
         private void pharmacyManager_createNewAction_Click(object sender, EventArgs e)
@@ -59,13 +63,17 @@ namespace Patikapp_proj_2.Views
             CreateNewPharmacyActionForm v = new CreateNewPharmacyActionForm();
             v.MdiParent = this.MdiParent;
             v.Show();
+            this.Hide();
+            this.Close();
         }
 
         private void pharmacyManager_ModifyAction_Click(object sender, EventArgs e)
         {
-            UpdatePharmacy v = new UpdatePharmacy(selected_pharmacy_id);
+            UpdatePharmacy v = new UpdatePharmacy(selected_pharmacy_id, phMng);
             v.MdiParent = this.MdiParent;
             v.Show();
+            this.Hide();
+            this.Close();
         }
 
         private void pharmacyManager_AssociateEmployeeAction_Click(object sender, EventArgs e)
@@ -73,6 +81,12 @@ namespace Patikapp_proj_2.Views
             AssociateEmployeeForm v = new AssociateEmployeeForm(selected_pharmacy_id);
             v.MdiParent = this.MdiParent;
             v.Show();
+            PharmaciesManager view = new PharmaciesManager();
+            view.MdiParent = this.MdiParent;
+            view.Show();
+            this.Hide();
+            this.Close();
+
         }
     }
 }

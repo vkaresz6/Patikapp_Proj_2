@@ -46,10 +46,10 @@ namespace Patikapp_proj_2.Views
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length > 3)
-            {
+            //if (textBox1.Text.Length > 3)
+            //{
 
-            }
+            //}
         }
 
         private void gyogyszDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -25,6 +25,8 @@ namespace Patikapp_proj_2.Modells
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<users_data> users_data { get; set; }
+        public virtual DbSet<activitymapping> activitymapping { get; set; }
         public virtual DbSet<application_base_controll_variables> application_base_controll_variables { get; set; }
         public virtual DbSet<debtphtopa> debtphtopa { get; set; }
         public virtual DbSet<debtphtoph> debtphtoph { get; set; }
@@ -35,10 +37,9 @@ namespace Patikapp_proj_2.Modells
         public virtual DbSet<pharmacies_data> pharmacies_data { get; set; }
         public virtual DbSet<psw> psw { get; set; }
         public virtual DbSet<roles> roles { get; set; }
+        public virtual DbSet<todo> todo { get; set; }
         public virtual DbSet<todolist> todolist { get; set; }
         public virtual DbSet<user_roles> user_roles { get; set; }
         public virtual DbSet<users> users { get; set; }
-        public virtual DbSet<users_data> users_data { get; set; }
-        public virtual DbSet<todo> todo { get; set; }
     }
 }

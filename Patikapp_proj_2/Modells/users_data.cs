@@ -22,7 +22,5 @@ namespace Patikapp_proj_2.Modells
         public string Email { get; set; }
         public string Comment { get; set; }
         public int IsEmployedAt { get; set; }
-    
-        public virtual users users { get; set; }
     }
 }

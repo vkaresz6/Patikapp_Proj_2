@@ -12,11 +12,11 @@ namespace Patikapp_proj_2.Modells
     using System;
     using System.Collections.Generic;
     
-    public partial class messagestoph
+    public partial class activitymapping
     {
         public int id { get; set; }
-        public string message { get; set; }
         public int user_id { get; set; }
         public int ph_id { get; set; }
+        public string Log { get; set; }
     }
 }

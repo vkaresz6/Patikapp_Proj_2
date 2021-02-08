@@ -33,6 +33,8 @@ namespace Patikapp_proj_2.Presenters
         public void SaveChanges()
         {
             _r.updatePharmacy(new pharmacies_data(selected_data.id, selected.id, _v.PhoneTextBox1.Text, "", _v.WebTextBox1.Text, _v.FacebookTextBox1.Text, _v.AdressTextBox1.Text));
+            _v.HideClose();
+
         }
     }
 

@@ -8,6 +8,9 @@ namespace Patikapp_proj_2.Modells
 {
     public partial class pharmacies
     {
+        public pharmacies()
+        {
+        }
 
         public pharmacies(int id, string name)
         {

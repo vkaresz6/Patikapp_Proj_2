@@ -35,12 +35,17 @@ namespace Patikapp_proj_2.Views
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.patikákKezeléseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.patikákKezeléseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.felhasználókKezeléseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kijelentkezésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tartozásokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.patikánakToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.betegnekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tartozásokTallózásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eszközökToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tennivalókToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kilépésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -49,19 +54,24 @@ namespace Patikapp_proj_2.Views
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileMenu,
-            this.tartozásokToolStripMenuItem});
+            this.tartozásokToolStripMenuItem,
+            this.eszközökToolStripMenuItem,
+            this.kilépésToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(981, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
+            this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip_ItemClicked);
             // 
             // fileMenu
             // 
             this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator4,
-            this.patikákKezeléseToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.patikákKezeléseToolStripMenuItem1,
+            this.felhasználókKezeléseToolStripMenuItem,
+            this.kijelentkezésToolStripMenuItem});
             this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.fileMenu.Name = "fileMenu";
             this.fileMenu.Size = new System.Drawing.Size(37, 20);
@@ -70,28 +80,40 @@ namespace Patikapp_proj_2.Views
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(155, 6);
-            // 
-            // patikákKezeléseToolStripMenuItem
-            // 
-            this.patikákKezeléseToolStripMenuItem.Name = "patikákKezeléseToolStripMenuItem";
-            this.patikákKezeléseToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.patikákKezeléseToolStripMenuItem.Text = "Patikák kezelése";
-            this.patikákKezeléseToolStripMenuItem.Click += new System.EventHandler(this.patikákKezeléseToolStripMenuItem_Click);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(184, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolsStripMenuItem_Click);
+            // 
+            // patikákKezeléseToolStripMenuItem1
+            // 
+            this.patikákKezeléseToolStripMenuItem1.Name = "patikákKezeléseToolStripMenuItem1";
+            this.patikákKezeléseToolStripMenuItem1.Size = new System.Drawing.Size(187, 22);
+            this.patikákKezeléseToolStripMenuItem1.Text = "Patikák kezelése";
+            this.patikákKezeléseToolStripMenuItem1.Click += new System.EventHandler(this.patikákKezeléseToolStripMenuItem1_Click);
+            // 
+            // felhasználókKezeléseToolStripMenuItem
+            // 
+            this.felhasználókKezeléseToolStripMenuItem.Name = "felhasználókKezeléseToolStripMenuItem";
+            this.felhasználókKezeléseToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.felhasználókKezeléseToolStripMenuItem.Text = "Felhasználók kezelése";
+            this.felhasználókKezeléseToolStripMenuItem.Click += new System.EventHandler(this.felhasználókKezeléseToolStripMenuItem_Click);
+            // 
+            // kijelentkezésToolStripMenuItem
+            // 
+            this.kijelentkezésToolStripMenuItem.Name = "kijelentkezésToolStripMenuItem";
+            this.kijelentkezésToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.kijelentkezésToolStripMenuItem.Text = "Kijelentkezés";
             // 
             // tartozásokToolStripMenuItem
             // 
             this.tartozásokToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.patikánakToolStripMenuItem,
-            this.betegnekToolStripMenuItem,
-            this.tartozásokTallózásaToolStripMenuItem});
+            this.betegnekToolStripMenuItem});
             this.tartozásokToolStripMenuItem.Name = "tartozásokToolStripMenuItem";
             this.tartozásokToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.tartozásokToolStripMenuItem.Text = "Tartozások";
@@ -110,11 +132,34 @@ namespace Patikapp_proj_2.Views
             this.betegnekToolStripMenuItem.Text = "Betegnek";
             this.betegnekToolStripMenuItem.Click += new System.EventHandler(this.betegnekToolStripMenuItem_Click);
             // 
-            // tartozásokTallózásaToolStripMenuItem
+            // eszközökToolStripMenuItem
             // 
-            this.tartozásokTallózásaToolStripMenuItem.Name = "tartozásokTallózásaToolStripMenuItem";
-            this.tartozásokTallózásaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.tartozásokTallózásaToolStripMenuItem.Text = "Tartozások tallózása";
+            this.eszközökToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tennivalókToolStripMenuItem,
+            this.chatToolStripMenuItem});
+            this.eszközökToolStripMenuItem.Name = "eszközökToolStripMenuItem";
+            this.eszközökToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.eszközökToolStripMenuItem.Text = "Eszközök";
+            // 
+            // tennivalókToolStripMenuItem
+            // 
+            this.tennivalókToolStripMenuItem.Name = "tennivalókToolStripMenuItem";
+            this.tennivalókToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.tennivalókToolStripMenuItem.Text = "Tennivalók";
+            this.tennivalókToolStripMenuItem.Click += new System.EventHandler(this.tennivalókToolStripMenuItem_Click);
+            // 
+            // chatToolStripMenuItem
+            // 
+            this.chatToolStripMenuItem.Name = "chatToolStripMenuItem";
+            this.chatToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.chatToolStripMenuItem.Text = "Chat";
+            // 
+            // kilépésToolStripMenuItem
+            // 
+            this.kilépésToolStripMenuItem.Name = "kilépésToolStripMenuItem";
+            this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.kilépésToolStripMenuItem.Text = "Kilépés";
+            this.kilépésToolStripMenuItem.Click += new System.EventHandler(this.kilépésToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
@@ -145,11 +190,16 @@ namespace Patikapp_proj_2.Views
         private System.Windows.Forms.ToolStripMenuItem fileMenu;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.ToolStripMenuItem patikákKezeléseToolStripMenuItem;
         private ToolStripMenuItem tartozásokToolStripMenuItem;
         private ToolStripMenuItem patikánakToolStripMenuItem;
         private ToolStripMenuItem betegnekToolStripMenuItem;
-        private ToolStripMenuItem tartozásokTallózásaToolStripMenuItem;
+        private ToolStripMenuItem eszközökToolStripMenuItem;
+        private ToolStripMenuItem tennivalókToolStripMenuItem;
+        private ToolStripMenuItem chatToolStripMenuItem;
+        private ToolStripMenuItem kilépésToolStripMenuItem;
+        private ToolStripMenuItem patikákKezeléseToolStripMenuItem1;
+        private ToolStripMenuItem felhasználókKezeléseToolStripMenuItem;
+        private ToolStripMenuItem kijelentkezésToolStripMenuItem;
     }
 }
 

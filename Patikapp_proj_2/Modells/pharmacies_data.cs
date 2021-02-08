@@ -21,7 +21,5 @@ namespace Patikapp_proj_2.Modells
         public string website { get; set; }
         public string facebook { get; set; }
         public string adress { get; set; }
-    
-        public virtual pharmacies pharmacies { get; set; }
     }
 }

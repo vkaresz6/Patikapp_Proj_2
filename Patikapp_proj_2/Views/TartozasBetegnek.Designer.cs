@@ -49,8 +49,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.gyogyszTableAdapter = new Patikapp_proj_2.vpharmacies_databaseDataSetTableAdapters.gyogyszTableAdapter();
             this.AmountPicker = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.UserPickerGridView)).BeginInit();
@@ -77,7 +75,6 @@
             this.UserPickerGridView.Size = new System.Drawing.Size(240, 396);
             this.UserPickerGridView.TabIndex = 0;
             this.UserPickerGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserPickerGridView_CellContentClick);
-            //this.UserPickerGridView.SelectionChanged += new System.EventHandler(this.UserPickerGridView_SelectionChanged);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -221,7 +218,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.SeaShell;
-            this.label2.Location = new System.Drawing.Point(283, 72);
+            this.label2.Location = new System.Drawing.Point(298, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(219, 31);
             this.label2.TabIndex = 7;
@@ -242,28 +239,6 @@
             this.label3.Text = "Aktív tartozások";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.ForeColor = System.Drawing.Color.SeaShell;
-            this.label4.Location = new System.Drawing.Point(273, 103);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 24);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Keresés";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(357, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 20);
-            this.textBox1.TabIndex = 10;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // gyogyszTableAdapter
             // 
             this.gyogyszTableAdapter.ClearBeforeFill = true;
@@ -282,8 +257,6 @@
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(800, 591);
             this.Controls.Add(this.AmountPicker);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -326,8 +299,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.BindingSource gyogyszBindingSource;
         private vpharmacies_databaseDataSetTableAdapters.gyogyszTableAdapter gyogyszTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn oEPTTTDataGridViewTextBoxColumn;

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Patikapp_proj_2.Repositories
 {
@@ -28,6 +29,7 @@ namespace Patikapp_proj_2.Repositories
             List<PhtoPaActiveDebtGridViewModell> result = new List<PhtoPaActiveDebtGridViewModell>();
             foreach (var item in db.debtphtopa.Where(x => x.from_ph_id == selectedPid).ToList())
             {
+                MessageBox.Show(db.debtphtopa.Where(x => x.from_ph_id == selectedPid).ToList().Count.ToString());
                 result.Add(new PhtoPaActiveDebtGridViewModell(
                                 0,
                                 db.pharmacies.Where(x => x.id == selectedPid).FirstOrDefault().name,

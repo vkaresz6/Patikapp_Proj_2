@@ -33,6 +33,7 @@ namespace Patikapp_proj_2.Views
             v.Show();
             this.Hide();
             this.Close();
+            this.Dispose();
         }
     }
 }

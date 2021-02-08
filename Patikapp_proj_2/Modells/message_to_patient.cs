@@ -17,7 +17,5 @@ namespace Patikapp_proj_2.Modells
         public int id { get; set; }
         public int user_id { get; set; }
         public string message { get; set; }
-    
-        public virtual users users { get; set; }
     }
 }

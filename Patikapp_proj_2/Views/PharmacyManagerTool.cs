@@ -35,5 +35,10 @@ namespace Patikapp_proj_2.Views
         {
 
         }
+
+        private void ReadyButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

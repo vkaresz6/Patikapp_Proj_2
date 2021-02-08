@@ -58,9 +58,11 @@ namespace Patikapp_proj_2.Views
 
         private void ManageButton_Click_1(object sender, EventArgs e)
         {
-            Form v = new PharmacyManager_action_picker((int)NameCombobox.SelectedValue, NameCombobox.Text);
+            Form v = new PharmacyManager_action_picker((int)NameCombobox.SelectedValue, NameCombobox.Text, this);
             v.MdiParent = this.ParentForm;
             v.Show();
+            this.Hide();
+            this.Close();
         }
 
         public int getSelected()

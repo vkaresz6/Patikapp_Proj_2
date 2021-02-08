@@ -13,5 +13,10 @@ namespace Patikapp_proj_2.Modells
             this.id = id;
             this.username = username;
         }
+
+        public users()
+        {
+
+        }
     }
 }
