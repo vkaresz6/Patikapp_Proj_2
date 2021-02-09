@@ -26,14 +26,14 @@ namespace Patikapp_proj_2.Presenters
             _v.chatBox.Text = "";
             foreach (var item in _r.getAllMsg())
             {
-                _v.chatBox.Text +=  item.message;
+                _v.chatBox.Text +=  item.message + "\r\n";
             }
         }
 
         public void sendMsg()
         {
             messagestoph param = new messagestoph();
-            param.message = Patikapp_proj_2.Resorurces.Session.PharmacyName + " :  " + _v.msgBox.Text;
+            param.message = Patikapp_proj_2.Resorurces.Session.PharmacyName + " :  " + _v.msgBox.Text +" "+DateTime.Now;
             param.ph_id = Patikapp_proj_2.Resorurces.Session.pharmacy;
             param.user_id = Int32.Parse(_v.userGridView.SelectedCells[0].Value.ToString());
 

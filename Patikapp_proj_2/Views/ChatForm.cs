@@ -25,6 +25,7 @@ namespace Patikapp_proj_2.Interfaces.ViewInterfaces
         {
             // TODO: This line of code loads data into the 'vpharmacies_databaseDataSet.users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.vpharmacies_databaseDataSet.users);
+            timer1.Start();
         }
         public TextBox chatBox { get => textBox1; set => textBox1 = value; }
         public TextBox msgBox { get => textBox2; set => textBox2 = value; }
