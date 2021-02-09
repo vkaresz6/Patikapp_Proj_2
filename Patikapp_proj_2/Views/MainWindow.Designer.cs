@@ -121,14 +121,14 @@ namespace Patikapp_proj_2.Views
             // patikánakToolStripMenuItem
             // 
             this.patikánakToolStripMenuItem.Name = "patikánakToolStripMenuItem";
-            this.patikánakToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.patikánakToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.patikánakToolStripMenuItem.Text = "Patikának";
             this.patikánakToolStripMenuItem.Click += new System.EventHandler(this.patikánakToolStripMenuItem_Click);
             // 
             // betegnekToolStripMenuItem
             // 
             this.betegnekToolStripMenuItem.Name = "betegnekToolStripMenuItem";
-            this.betegnekToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.betegnekToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.betegnekToolStripMenuItem.Text = "Betegnek";
             this.betegnekToolStripMenuItem.Click += new System.EventHandler(this.betegnekToolStripMenuItem_Click);
             // 
@@ -144,15 +144,16 @@ namespace Patikapp_proj_2.Views
             // tennivalókToolStripMenuItem
             // 
             this.tennivalókToolStripMenuItem.Name = "tennivalókToolStripMenuItem";
-            this.tennivalókToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.tennivalókToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tennivalókToolStripMenuItem.Text = "Tennivalók";
             this.tennivalókToolStripMenuItem.Click += new System.EventHandler(this.tennivalókToolStripMenuItem_Click);
             // 
             // chatToolStripMenuItem
             // 
             this.chatToolStripMenuItem.Name = "chatToolStripMenuItem";
-            this.chatToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.chatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.chatToolStripMenuItem.Text = "Chat";
+            this.chatToolStripMenuItem.Click += new System.EventHandler(this.chatToolStripMenuItem_Click);
             // 
             // kilépésToolStripMenuItem
             // 

@@ -34,6 +34,8 @@ namespace Patikapp_proj_2.Views
 
         private void Schedulerform_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'vpharmacies_databaseDataSet.todo' table. You can move, or remove it, as needed.
+            this.todoTableAdapter.Fill(this.vpharmacies_databaseDataSet.todo);
             presenter.fillGridViewByPid();
         }
 

@@ -45,7 +45,6 @@ namespace Patikapp_proj_2.Views
         }
         public Button PharmacyManager_DeleteAction1 { get => PharmacyManager_DeleteAction; set => PharmacyManager_DeleteAction = value; }
         public Button PharmacyManager_ModifyAction { get => pharmacyManager_ModifyAction; set => pharmacyManager_ModifyAction = value; }
-        public Button PharmacyManager_createNewAction { get => pharmacyManager_createNewAction; set => pharmacyManager_createNewAction = value; }
         public Button PharmacyManager_AssociateEmployeeAction { get => pharmacyManager_AssociateEmployeeAction; set => pharmacyManager_AssociateEmployeeAction = value; }
         public Label Label1 { get => label1; set => label1 = value; }
         public Label Selected1 { get => Selected; set => Selected = value; }
@@ -58,14 +57,7 @@ namespace Patikapp_proj_2.Views
             
         }
 
-        private void pharmacyManager_createNewAction_Click(object sender, EventArgs e)
-        {
-            CreateNewPharmacyActionForm v = new CreateNewPharmacyActionForm();
-            v.MdiParent = this.MdiParent;
-            v.Show();
-            this.Hide();
-            this.Close();
-        }
+        
 
         private void pharmacyManager_ModifyAction_Click(object sender, EventArgs e)
         {

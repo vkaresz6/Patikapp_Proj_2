@@ -27,6 +27,7 @@ namespace Patikapp_proj_2.Repositories
         public void AddTo(todo param)
         {
             db.todo.Add(param);
+            db.SaveChanges();
         }
 
         /// <summary>
@@ -54,7 +55,6 @@ namespace Patikapp_proj_2.Repositories
                     result.Add(item);
                 }
             }
-            db.SaveChanges();
             return result;
         }
 

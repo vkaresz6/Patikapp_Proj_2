@@ -33,7 +33,7 @@ namespace Patikapp_proj_2.Presenters
             if (selectedvalue != 0)
             {
                 PharmaciesManagerViewModell vm;
-                vm = _r.getViewModell(Convert.ToInt32(_v.NameCombobox1.SelectedValue));
+                vm = _r.getViewModell(_r.getPID(_v.NameCombobox1.Text));
                 _v.AdressTextBox1.Text = vm.Adress;
                 _v.FacebookTextBox1.Text = vm.Facebook;
                 _v.PhoneTextBox1.Text = vm.Phone;

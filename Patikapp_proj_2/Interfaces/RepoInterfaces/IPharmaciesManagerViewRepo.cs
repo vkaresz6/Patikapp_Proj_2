@@ -9,5 +9,6 @@ namespace Patikapp_proj_2.Repositories
         pharmacies_data findDataById(int id);
         pharmacies findPharmacyById(int id);
         PharmaciesManagerViewModell getViewModell(int id);
+        int getPID(string name);
     }
 }

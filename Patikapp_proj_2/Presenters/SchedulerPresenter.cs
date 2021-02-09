@@ -24,6 +24,7 @@ namespace Patikapp_proj_2.Presenters
         {
             _r = r;
             _v = v;
+            factory = new ScheduleFactory();
             this.pid = pid;
         }
 
@@ -69,6 +70,14 @@ namespace Patikapp_proj_2.Presenters
             param.ph_id = pid;
             param.todo1 = _v.RichTextBox2.Text;
             _r.AddTo(param);
+            factory.IntervalInMinutes(param.alarmhours, param.alarmMinutes, 1, () =>
+            {
+                
+                    MessageBox.Show(param.todo1);
+                    SystemSounds.Beep.Play();
+
+                
+            });
         }
 
     }

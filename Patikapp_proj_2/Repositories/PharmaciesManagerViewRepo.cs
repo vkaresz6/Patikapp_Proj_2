@@ -40,7 +40,7 @@ namespace Patikapp_proj_2.Repositories
         {
             try
             {
-                return db.pharmacies_data.Where(x => x.pharmacy_id == id).FirstOrDefault();
+                return db.pharmacies_data.ToList()[id-1];
             }
             catch (Exception e)
             {
@@ -83,6 +83,11 @@ namespace Patikapp_proj_2.Repositories
                 Console.WriteLine(("Törlés sikertelen DatabaseError Patikapp.repositories.pharmacymanagerViewRepo.getViewModell " + " " + e.ToString()));
                 throw;
             }
+        }
+
+        public int getPID(String name)
+        {
+            return db.pharmacies.Where(x => x.name == name).FirstOrDefault().id;
         }
     }
 }

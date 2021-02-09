@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.todoGridView = new System.Windows.Forms.DataGridView();
             this.addButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
@@ -39,12 +40,22 @@
             this.mm = new System.Windows.Forms.TextBox();
             this.exp = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
+            this.vpharmacies_databaseDataSet = new Patikapp_proj_2.vpharmacies_databaseDataSet();
+            this.todoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.todoTableAdapter = new Patikapp_proj_2.vpharmacies_databaseDataSetTableAdapters.todoTableAdapter();
+            this.todoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.todoGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vpharmacies_databaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.todoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // todoGridView
             // 
+            this.todoGridView.AutoGenerateColumns = false;
             this.todoGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.todoGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.todoDataGridViewTextBoxColumn});
+            this.todoGridView.DataSource = this.todoBindingSource;
             this.todoGridView.Location = new System.Drawing.Point(12, 12);
             this.todoGridView.Name = "todoGridView";
             this.todoGridView.Size = new System.Drawing.Size(590, 389);
@@ -150,6 +161,26 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Lejárat";
             // 
+            // vpharmacies_databaseDataSet
+            // 
+            this.vpharmacies_databaseDataSet.DataSetName = "vpharmacies_databaseDataSet";
+            this.vpharmacies_databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // todoBindingSource
+            // 
+            this.todoBindingSource.DataMember = "todo";
+            this.todoBindingSource.DataSource = this.vpharmacies_databaseDataSet;
+            // 
+            // todoTableAdapter
+            // 
+            this.todoTableAdapter.ClearBeforeFill = true;
+            // 
+            // todoDataGridViewTextBoxColumn
+            // 
+            this.todoDataGridViewTextBoxColumn.DataPropertyName = "todo";
+            this.todoDataGridViewTextBoxColumn.HeaderText = "todo";
+            this.todoDataGridViewTextBoxColumn.Name = "todoDataGridViewTextBoxColumn";
+            // 
             // Schedulerform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +202,8 @@
             this.Text = "Schedulerform";
             this.Load += new System.EventHandler(this.Schedulerform_Load);
             ((System.ComponentModel.ISupportInitialize)(this.todoGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vpharmacies_databaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.todoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,5 +222,9 @@
         private System.Windows.Forms.TextBox mm;
         private System.Windows.Forms.DateTimePicker exp;
         private System.Windows.Forms.Label label3;
+        private vpharmacies_databaseDataSet vpharmacies_databaseDataSet;
+        private System.Windows.Forms.BindingSource todoBindingSource;
+        private vpharmacies_databaseDataSetTableAdapters.todoTableAdapter todoTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn todoDataGridViewTextBoxColumn;
     }
 }

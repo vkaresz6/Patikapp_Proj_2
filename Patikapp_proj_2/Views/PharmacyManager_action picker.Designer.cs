@@ -32,7 +32,6 @@ namespace Patikapp_proj_2.Views
         {
             this.PharmacyManager_DeleteAction = new System.Windows.Forms.Button();
             this.pharmacyManager_ModifyAction = new System.Windows.Forms.Button();
-            this.pharmacyManager_createNewAction = new System.Windows.Forms.Button();
             this.pharmacyManager_AssociateEmployeeAction = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Selected = new System.Windows.Forms.Label();
@@ -58,19 +57,9 @@ namespace Patikapp_proj_2.Views
             this.pharmacyManager_ModifyAction.UseVisualStyleBackColor = true;
             this.pharmacyManager_ModifyAction.Click += new System.EventHandler(this.pharmacyManager_ModifyAction_Click);
             // 
-            // pharmacyManager_createNewAction
-            // 
-            this.pharmacyManager_createNewAction.Location = new System.Drawing.Point(35, 191);
-            this.pharmacyManager_createNewAction.Name = "pharmacyManager_createNewAction";
-            this.pharmacyManager_createNewAction.Size = new System.Drawing.Size(178, 34);
-            this.pharmacyManager_createNewAction.TabIndex = 2;
-            this.pharmacyManager_createNewAction.Text = "Új patika felvétele";
-            this.pharmacyManager_createNewAction.UseVisualStyleBackColor = true;
-            this.pharmacyManager_createNewAction.Click += new System.EventHandler(this.pharmacyManager_createNewAction_Click);
-            // 
             // pharmacyManager_AssociateEmployeeAction
             // 
-            this.pharmacyManager_AssociateEmployeeAction.Location = new System.Drawing.Point(35, 231);
+            this.pharmacyManager_AssociateEmployeeAction.Location = new System.Drawing.Point(35, 191);
             this.pharmacyManager_AssociateEmployeeAction.Name = "pharmacyManager_AssociateEmployeeAction";
             this.pharmacyManager_AssociateEmployeeAction.Size = new System.Drawing.Size(178, 34);
             this.pharmacyManager_AssociateEmployeeAction.TabIndex = 3;
@@ -106,11 +95,10 @@ namespace Patikapp_proj_2.Views
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(250, 291);
+            this.ClientSize = new System.Drawing.Size(250, 236);
             this.Controls.Add(this.Selected);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pharmacyManager_AssociateEmployeeAction);
-            this.Controls.Add(this.pharmacyManager_createNewAction);
             this.Controls.Add(this.pharmacyManager_ModifyAction);
             this.Controls.Add(this.PharmacyManager_DeleteAction);
             this.Name = "PharmacyManager_action_picker";
@@ -125,7 +113,6 @@ namespace Patikapp_proj_2.Views
 
         private System.Windows.Forms.Button PharmacyManager_DeleteAction;
         private System.Windows.Forms.Button pharmacyManager_ModifyAction;
-        private System.Windows.Forms.Button pharmacyManager_createNewAction;
         private System.Windows.Forms.Button pharmacyManager_AssociateEmployeeAction;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Selected;

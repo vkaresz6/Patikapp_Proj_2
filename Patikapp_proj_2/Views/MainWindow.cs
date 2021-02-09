@@ -1,4 +1,5 @@
-﻿using Patikapp_proj_2.Repositories;
+﻿using Patikapp_proj_2.Interfaces.ViewInterfaces;
+using Patikapp_proj_2.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -149,6 +150,13 @@ namespace Patikapp_proj_2.Views
         private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void chatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form childForm = new ChatForm();
+            childForm.MdiParent = this;
+            childForm.Show();
         }
     }
 }
